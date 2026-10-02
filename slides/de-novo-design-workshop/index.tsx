@@ -48,7 +48,7 @@ const FONT = {
   mono: '"JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace',
 };
 
-const LAB_URL = 'https://y-jpy.github.io/IGEM-De-Novo-Workshop-Trial-/';
+const LAB_URL = 'https://davis0712.github.io/iGEM-Dry-Lab-Workshop/index.html';
 
 // ─── Webfonts (module-level, slide-keyed injection) ──────────────────────────
 const FREDOKA_HREF = new URL('./assets/fredoka.woff2', import.meta.url).href;
@@ -2178,8 +2178,7 @@ const Lab: Page = () => {
             <img src={studioQr} alt="QR code for the De Novo AI Bio-Design Studio" style={{ width: 320, height: 320, display: 'block' }} />
           </div>
           <div style={{ fontFamily: FONT.mono, fontSize: 23, fontWeight: 800, color: C.muted, textAlign: 'center' }}>
-            y-jpy.github.io/IGEM-De-Novo-Workshop-Trial-
-          </div>
+            https://davis0712.github.io/iGEM-Dry-Lab-Workshop/index.html</div>
           <PillBtn
             color={copied ? C.green : C.blue}
             size={26}

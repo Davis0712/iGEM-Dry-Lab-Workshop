@@ -213,7 +213,6 @@ const Chip = ({
       ...style,
     }}
   >
-    {/* @slide-comment id="c-6e77dfba" ts="2026-10-02T04:26:49.650Z" text="eyJub3RlIjoibW92ZSB0aGlzIHRvIHRoZSAxNXRoIHNsaWRlIn0" */}
     {children}
   </span>
 );
@@ -1843,6 +1842,9 @@ const WriteTheGene: Page = () => {
       <Lede>
         Proteins are built from DNA, three letters at a time. <b>4³ = 64 codons</b>{' (密碼子) spell only 20 amino acids — and E. coli (大腸桿菌)'}<b>{''}</b>{' reads some of them much faster than others.'}
       </Lede>
+      <Chip color={C.blue} size={24} style={{ marginTop: 18 }}>
+        DNA is the recipe — a gene spells out the amino acid chain that folds into a protein
+      </Chip>
       <div style={{ display: 'flex', gap: 56, marginTop: 34 }}>
         <div style={{ width: 470, flex: 'none' }}>
           <Peptide seq="MTVQELLRELAGLKT" size={52} choices={CODON_CHOICES.map((c) => c.pos)} />
@@ -1979,9 +1981,6 @@ const SafetyCheck: Page = () => {
       <Kicker color={C.green}>Stage 4 · Build · Step 10 of 10</Kicker>
       <H>Clear the safety check</H>
       <Lede>Before any DNA is ordered, three questions.  Some answers sound reasonable — but protect the wrong thing.</Lede>
-      <Chip color={C.blue} size={24} style={{ marginTop: 18 }}>
-        DNA is the recipe — a gene spells out the amino acid chain that folds into a protein
-      </Chip>
       <div style={{ display: 'grid', gap: 16, marginTop: 26 }}>
         {SAFETY_QUIZ.map((q, qi) => {
           const idx = picked[qi];

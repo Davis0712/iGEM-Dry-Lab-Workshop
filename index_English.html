@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="zh-Hant-HK">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>De Novo AI Bio-Design Studio · 香港繁體中文版</title>
+<title>De Novo AI Bio-Design Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+HK:wght@400;500;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
 :root{
   --ground:#EDF1F7; --surface:#FFFFFF; --surface-2:#E2E9F3; --ink:#0C1A2B; --ink-2:#4A5B72; --line:#C8D4E4;
@@ -18,9 +18,9 @@
   --chain:#8496AC;
   --focus:#1D5FD6;
   --shadow:0 1px 2px rgba(12,26,43,.06),0 8px 24px rgba(12,26,43,.08);
-  --display:"Bricolage Grotesque","Avenir Next","Noto Sans HK","Noto Sans TC","PingFang HK","Microsoft JhengHei","Segoe UI",system-ui,sans-serif;
-  --body:"Atkinson Hyperlegible","Noto Sans HK","Noto Sans TC","PingFang HK","Microsoft JhengHei","Segoe UI",system-ui,-apple-system,sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,"SF Mono","PingFang HK","Microsoft JhengHei",Menlo,Consolas,monospace;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --hdr:64px;
   color-scheme:light;
 }
@@ -425,17 +425,17 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
   <div class="hdr-in">
     <a class="brand" href="#mission"><span class="brand-mark" aria-hidden="true"></span>De Novo Bio-Design Studio</a>
     <div class="hdr-actions">
-      <a class="ghost" href="./index_English.html" hreflang="en" lang="en">English</a>
-      <button class="ghost nb-toggle" id="nbToggle" aria-controls="notebook" aria-expanded="false">實驗筆記本 <span class="num" id="nbToggleCount">0</span></button>
-      <button class="ghost" id="restart">重新開始</button>
+      <a class="ghost" href="./index.html" hreflang="zh-Hant-HK" lang="zh-Hant">繁體中文（香港）</a>
+      <button class="ghost nb-toggle" id="nbToggle" aria-controls="notebook" aria-expanded="false">Notebook <span class="num" id="nbToggleCount">0</span></button>
+      <button class="ghost" id="restart">Start over</button>
     </div>
   </div>
   <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
 </header>
 
-<aside class="rail" id="rail" aria-label="工作坊檢查點">
-  <span class="rail-label">檢查點</span>
-  <nav class="progress" id="progress" aria-label="階段"></nav>
+<aside class="rail" id="rail" aria-label="Workshop checkpoints">
+  <span class="rail-label">Checkpoints</span>
+  <nav class="progress" id="progress" aria-label="Stages"></nav>
 </aside>
 
 <div class="shell">
@@ -444,58 +444,58 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 <!-- ============ MISSION ============ -->
 <section class="mission" id="mission" data-step="0">
   <div class="m-top">
-    <span class="eyebrow">香港大學 iGEM · 從頭設計工作室</span>
-    <h1 class="m-title">設計一個<em>更出色</em>的蛋白質，關掉炎症警報。</h1>
-    <p class="m-lede">一個慢性傷口不斷觸發免疫警報。警報訊號經由一種叫 <b>MD2</b> 的共受體傳遞。</p>
-    <p class="m-lede">一種名為 <b>TAP2（TLR4 拮抗肽 2）</b>的肽已經能夠阻斷 MD2，幫助傷口癒合——但它的作用時間短、效力一般，而且可能引起免疫反應。我們的工作不是憑空發明：而是用生成式人工智能<b>設計一個更好的 TAP2</b>，再讓它接受真實藥物候選者要面對的同樣篩選。</p>
+    <span class="eyebrow">HKU iGEM · De novo design studio</span>
+    <h1 class="m-title">Design a <em>better</em> protein to switch off inflammation.</h1>
+    <p class="m-lede">A chronic wound keeps triggering an immune alarm. The alarm travels through a co-receptor called <b>MD2</b>.</p>
+    <p class="m-lede">A peptide called <b>TAP2 (TLR4 Antagonistic Peptide 2)</b> already blocks MD2 and helps wounds heal — but it is short-lived, moderately strong, and can provoke an immune response. Our job is not to invent from nothing: it is to <b>design a better TAP2</b> using generative AI, then run it through the same filters a real drug candidate faces.</p>
     <div class="m-meta">
-      <span><b>15 個階段</b> · 約 50 分鐘</span>
-      <span><b>無需編程</b></span>
-      <span>進度會儲存在此瀏覽器</span>
+      <span><b>15 stages</b> · about 50 minutes</span>
+      <span><b>No coding</b> needed</span>
+      <span>Progress saves in this browser</span>
     </div>
   </div>
 
   <div class="stage-strip">
-    <div class="stage-card s1"><span class="n">階段 1 · 生成</span><h4>目標與主鏈</h4><p>鎖定熱點，然後讓 RFdiffusion 和 ProteinMPNN 提出 10 個全新結合肽。</p></div>
-    <div class="stage-card s2"><span class="n">階段 2 · 篩選</span><h4>篩選漏斗</h4><p>五重檢查——摺疊、抓力、安全，以及兩重免疫篩查——把 10 個候選者收窄至 2 個。</p></div>
-    <div class="stage-card s3"><span class="n">階段 3 · 測試</span><h4>物理與演化</h4><p>模擬體溫環境，然後透過突變加強抓力。</p></div>
-    <div class="stage-card s4"><span class="n">階段 4 · 構建</span><h4>DNA 與安全</h4><p>把蛋白質轉回基因，並通過生物安全檢查。</p></div>
+    <div class="stage-card s1"><span class="n">Stage 1 · Generate</span><h4>Target &amp; backbone</h4><p>Lock the hotspots, then let RFdiffusion and ProteinMPNN propose 10 new binders.</p></div>
+    <div class="stage-card s2"><span class="n">Stage 2 · Filter</span><h4>The funnel</h4><p>Five checks — fold, grip, safety, and two immune screens — narrow 10 candidates down to 2.</p></div>
+    <div class="stage-card s3"><span class="n">Stage 3 · Test</span><h4>Physics &amp; evolution</h4><p>Simulate body temperature, then mutate to strengthen the grip.</p></div>
+    <div class="stage-card s4"><span class="n">Stage 4 · Build</span><h4>DNA &amp; safety</h4><p>Turn the protein back into a gene and clear the biosafety check.</p></div>
   </div>
 
   <div class="hero-wrap">
-    <canvas id="heroCanvas" aria-label="旋轉的 MD2 共受體，一個設計肽正對接其上"></canvas>
-    <span class="hero-cap" id="heroCap">MD2 共受體 · 殘基 A17–A160</span>
+    <canvas id="heroCanvas" aria-label="Rotating MD2 co-receptor with a designed peptide docking onto it"></canvas>
+    <span class="hero-cap" id="heroCap">MD2 co-receptor · residues A17–A160</span>
     <span class="hero-key">
-      <i><span class="dot" style="background:var(--dock)"></span>MD2 鏈</i>
-      <i><span class="dot" style="background:var(--hot)"></span>熱點 A82 / A85</i>
-      <i><span class="dot" style="background:var(--acc)"></span>你的結合肽</i>
+      <i><span class="dot" style="background:var(--dock)"></span>MD2 chain</i>
+      <i><span class="dot" style="background:var(--hot)"></span>hotspots A82 / A85</i>
+      <i><span class="dot" style="background:var(--acc)"></span>your binder</i>
     </span>
   </div>
 
   <div class="mission-go rv">
-    <button class="btn acc big" id="startBtn">進入工作室 ↓</button>
-    <span class="kbd-hint">你所作的每個決定都會寫入右側的實驗筆記本。</span>
+    <button class="btn acc big" id="startBtn">Enter the studio ↓</button>
+    <span class="kbd-hint">Everything you decide gets written into your Lab Notebook on the right.</span>
   </div>
 </section>
 
 <!-- ============ STAGE 1.1 ============ -->
 <section class="step locked" id="step-1" data-step="1">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成任務以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish the mission to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 1.1 <span class="t">· 目標對接設定 · 5 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>找出 MD2 上值得覆蓋的位置</h2>
-    <p class="lede">這是真實的 MD2 共受體，殘基 <b class="num">A17–A160</b>。拖曳即可轉動。兩個殘基——<b class="num">A82</b> 和 <b class="num">A85</b>——就是接觸熱點。點擊兩者，把它們鎖定為你的設計目標。</p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="1">提示</button><button class="ghost reset-btn" data-reset="1" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 1.1 <span class="t">· target docking setup · 5 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Find the spot on MD2 worth covering</h2>
+    <p class="lede">This is the real MD2 co-receptor, residues <b class="num">A17–A160</b>. Drag to spin it. Two residues — <b class="num">A82</b> and <b class="num">A85</b> — are the contact hotspots. Click both to lock them as your design target.</p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="1">Hint</button><button class="ghost reset-btn" data-reset="1" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div class="split wide">
       <div class="viewer canvas-box" style="height:min(430px,58vh)">
-        <canvas id="targetCanvas" aria-label="可旋轉的 MD2 共受體 3D 模型"></canvas>
-        <span class="canvas-hint">拖曳旋轉 · 點擊紅色殘基</span>
+        <canvas id="targetCanvas" aria-label="Rotatable 3D model of the MD2 co-receptor"></canvas>
+        <span class="canvas-hint">drag to rotate · click a red residue</span>
       </div>
       <div class="step-body">
         <div class="panel" style="display:grid;gap:8px">
-          <span class="label">設計片段</span>
+          <span class="label">Design contig</span>
           <div class="contig" id="contig">
             <span class="seg">A17–A81</span><span class="sep">/</span>
             <span class="seg hot" data-hot="82">A82 ?</span><span class="sep">/</span>
@@ -503,60 +503,60 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
             <span class="seg hot" data-hot="85">A85 ?</span><span class="sep">/</span>
             <span class="seg">A86–A160</span>
           </div>
-          <p class="kbd-hint">熱點以外的一切都是支架——我們會<i>針對</i>它來設計，但絕不會突變它。</p>
+          <p class="kbd-hint">Everything outside the hotspots is scaffold — we design <i>against</i> it but never mutate it.</p>
         </div>
         <div id="s1say" aria-live="polite"></div>
         <div class="panel" style="display:grid;gap:6px">
-          <span class="label">為甚麼是這兩個？</span>
-          <p style="font-size:15px;color:var(--ink-2)">A82 和 A85 位於 MD2 結合口袋的邊緣。同時覆蓋兩者的結合肽能在物理上擋住警報分子著陸。漏掉任何一個，警報依然會響起。</p>
+          <span class="label">Why these two?</span>
+          <p style="font-size:15px;color:var(--ink-2)">A82 and A85 sit on the rim of the MD2 pocket. A binder that covers both physically blocks the alarm molecule from landing. Miss one and the alarm still fires.</p>
         </div>
       </div>
     </div>
   </div>
   <div class="step-foot">
     <div class="discover" id="s1disc" hidden>
-      <span class="k">你剛剛定下了設計綱要</span>
-      <div class="rule"><span class="tile m">覆蓋 A82</span><span class="tile o">以及</span><span class="tile m">覆蓋 A85</span><span class="tile o">——別無其他</span></div>
-      <p>覆蓋範圍超出熱點的結合肽，會浪費本可用來抓得更緊的表面。</p>
-      <span class="sci"><span class="flask">Sc</span>結合肽所接觸的表面區域就是<b>抗原表位（epitope）</b></span>
+      <span class="k">You just set the design brief</span>
+      <div class="rule"><span class="tile m">cover A82</span><span class="tile o">and</span><span class="tile m">cover A85</span><span class="tile o">— nothing else</span></div>
+      <p>A binder that covers more than the hotspots wastes surface it could use to grip tighter.</p>
+      <span class="sci"><span class="flask">Sc</span>The patch of surface a binder touches is the <b>epitope</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="2" hidden>下一步：執行生成式 AI ↓</button>
+    <button class="btn acc next-btn" data-next="2" hidden>Next: run the generative AI ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 1.2 ============ -->
 <section class="step locked" id="step-2" data-step="2">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>鎖定兩個熱點以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Lock both hotspots to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 1.2 <span class="t">· AI 主鏈與序列設計 · 5 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>讓生成式 AI 提出 10 個候選者</h2>
-    <p class="lede">兩個模型互相配合。<b>RFdiffusion（RFD3）</b>會發明一條貼合熱點的 15 殘基主鏈。<b>ProteinMPNN</b>然後決定每個位置放哪個氨基酸。接着我們再檢查結果。</p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="2">提示</button><button class="ghost reset-btn" data-reset="2" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 1.2 <span class="t">· AI backbone &amp; sequence design · 5 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Let the generative AI propose 10 candidates</h2>
+    <p class="lede">Two models work as a team. <b>RFdiffusion (RFD3)</b> invents a 15-residue backbone that fits the hotspot. <b>ProteinMPNN</b> then decides which amino acid goes at each position. Then we check what came out.</p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="2">Hint</button><button class="ghost reset-btn" data-reset="2" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div class="split wide">
       <div class="step-body" style="gap:12px">
-        <div class="log" id="genLog"><span class="kbd-hint">等待你按下按鈕。不會下載任何東西——這是一次真實運算的模擬。</span></div>
+        <div class="log" id="genLog"><span class="kbd-hint">Waiting for you to press the button. Nothing is downloaded — this is a simulation of a real run.</span></div>
         <div class="progbar"><i id="genBar"></i></div>
         <div class="row">
-          <button class="btn acc" id="genRun">執行生成式 AI ▸</button>
-          <button class="ghost" id="genReset" disabled>重設</button>
+          <button class="btn acc" id="genRun">Run generative AI ▸</button>
+          <button class="ghost" id="genReset" disabled>Reset</button>
         </div>
       </div>
       <div class="step-body" style="gap:12px">
         <div class="panel" style="display:grid;gap:8px">
-          <span class="label">模型實際在做甚麼</span>
-          <p style="font-size:15px;color:var(--ink-2)"><b>RFdiffusion</b> 從形狀像蛋白質的隨機雜訊開始，逐步移除雜訊，直至出現一條合理的主鏈——與圖像生成器的概念相同，不過是在 3D 空間。</p>
-          <p style="font-size:15px;color:var(--ink-2)"><b>ProteinMPNN</b> 保持主鏈不變，解開一道謎題：哪一條氨基酸序列最可能摺疊成這個形狀？</p>
+          <span class="label">What the models are actually doing</span>
+          <p style="font-size:15px;color:var(--ink-2)"><b>RFdiffusion</b> starts from random noise shaped like a protein and removes the noise step by step until a plausible backbone appears — the same idea as an image generator, in 3D.</p>
+          <p style="font-size:15px;color:var(--ink-2)"><b>ProteinMPNN</b> keeps that backbone fixed and solves a puzzle: which amino acid sequence would most likely fold into it?</p>
         </div>
         <div id="s2say" aria-live="polite"></div>
       </div>
     </div>
     <div id="candWrap" hidden>
-      <p class="label" style="margin-bottom:10px">10 個候選設計</p>
+      <p class="label" style="margin-bottom:10px">10 candidate designs</p>
       <div class="cand-grid" id="candGrid"></div>
       <div class="row" style="margin-top:14px;gap:16px;font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--ink-2)">
-        <span>pLDDT 顏色</span>
+        <span>pLDDT colour</span>
         <span style="display:flex;gap:4px;align-items:center"><span class="dot" style="background:#0053D6"></span>&gt;90</span>
         <span style="display:flex;gap:4px;align-items:center"><span class="dot" style="background:#65CBF3"></span>70–90</span>
         <span style="display:flex;gap:4px;align-items:center"><span class="dot" style="background:#FFDB13"></span>50–70</span>
@@ -566,294 +566,294 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
   </div>
   <div class="step-foot">
     <div class="discover" id="s2disc" hidden>
-      <span class="k">10 個設計，一份檔案</span>
-      <div class="rule"><span class="tile">每個候選者都是 15 個殘基長</span></div>
-      <p>它們全部貼合熱點。但它們並非全部都能摺疊、抓緊，或是在人體內保持安靜。這正是篩選漏斗的用途。</p>
-      <span class="sci"><span class="flask">Sc</span>像這樣的短鏈就是<b>肽</b>；AI 設計的結合肽通常稱為<b>從頭設計結合肽（de novo binder）</b></span>
+      <span class="k">10 designs, one file</span>
+      <div class="rule"><span class="tile">every candidate is 15 residues long</span></div>
+      <p>They all fit the hotspot. They do <i>not</i> all fold, grip, or stay quiet inside a human body. That is what the funnel is for.</p>
+      <span class="sci"><span class="flask">Sc</span>A short chain like this is a <b>peptide</b>; AI-designed binders are often called <b>de novo binders</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="3" hidden>繼續 ↓</button>
+    <button class="btn acc next-btn" data-next="3" hidden>Continue ↓</button>
   </div>
 </section>
 
 <!-- ============ INTERLUDE · Stage 1 done ============ -->
 <section class="step interlude locked" id="step-3" data-step="3">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成階段 1.2 以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish Stage 1.2 to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 1 · 完成 <span class="t">· 檢查點</span> <span class="step-done-pill">閱讀</span></span>
-    <h2>綱要已定。篩選漏斗正式開始。</h2>
-    <p class="lede">你已完成這項工作最有創意的一半。AI 交給你的 10 個設計看起來全部<i>像樣</i>。從現在起，你所做的一切都是減法。</p>
+    <span class="step-no">Stage 1 · Complete <span class="t">· checkpoint</span> <span class="step-done-pill">Read</span></span>
+    <h2>The brief is set. Now the funnel begins.</h2>
+    <p class="lede">You have done the creative half of the job. The AI handed you 10 designs that all <i>look</i> plausible. From here on, everything you do is subtraction.</p>
   </header>
   <div class="step-body">
     <div class="il-grid">
       <div class="il-card">
-        <span class="t">你剛才做了甚麼</span>
+        <span class="t">What you just did</span>
         <ul>
-          <li>選定了<b>抗原表位</b>——MD2 上的 A82 和 A85</li>
-          <li>執行 <b>RFdiffusion</b> 來發明主鏈</li>
-          <li>執行 <b>ProteinMPNN</b> 來分配氨基酸</li>
-          <li>收集了 <b>10 個候選結合肽</b></li>
+          <li>Picked the <b>epitope</b> — A82 &amp; A85 on MD2</li>
+          <li>Ran <b>RFdiffusion</b> to invent a backbone</li>
+          <li>Ran <b>ProteinMPNN</b> to assign amino acids</li>
+          <li>Collected <b>10 candidate binders</b></li>
         </ul>
       </div>
       <div class="il-card">
-        <span class="t">你學到了甚麼</span>
+        <span class="t">What you learned</span>
         <ul>
-          <li>AI 擅長<b>提出</b>，不擅長<b>判斷</b></li>
-          <li>貼合熱點 ≠ 穩定摺疊</li>
-          <li>穩定摺疊 ≠ 抓得牢固</li>
-          <li>每個候選者都是一個假設，而不是答案</li>
+          <li>AI is good at <b>proposing</b>, not at <b>judging</b></li>
+          <li>Fitting the hotspot ≠ folding stably</li>
+          <li>Folding stably ≠ gripping tightly</li>
+          <li>Every candidate is a hypothesis, not an answer</li>
         </ul>
       </div>
       <div class="il-card">
-        <span class="t">接下來</span>
+        <span class="t">What's next</span>
         <ul>
-          <li>五重篩選，按成本由低至高執行</li>
-          <li>每重都問一個<b>不同的問題</b></li>
-          <li>任何一關不合格即出局</li>
-          <li>10 個候選者進去——出來的會有多少個？</li>
+          <li>Five filters, run in order of cost</li>
+          <li>Each asks a <b>different question</b></li>
+          <li>Fail any one and you're out</li>
+          <li>10 candidates go in — how many come out?</li>
         </ul>
       </div>
     </div>
-    <div class="il-quote">一個設計只要在任何一重篩選中不合格，就不能用，<em>無論其他方面有多好</em>。</div>
-    <div class="il-next"><span class="il-badge">階段 2 · 篩選</span> <span><b>摺疊質素</b> → 抓力 → 安全 → 免疫 → <b>2 個生還者</b></span></div>
+    <div class="il-quote">A design that fails one filter is unusable, <em>however good the others are</em>.</div>
+    <div class="il-next"><span class="il-badge">Stage 2 · Filter</span> <span><b>Fold quality</b> → grip → safety → immune → <b>2 survivors</b></span></div>
   </div>
   <div class="step-foot">
-    <button class="btn acc next-btn" data-next="4" hidden>開始篩選漏斗 ↓</button>
+    <button class="btn acc next-btn" data-next="4" hidden>Start the funnel ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 2.1 ============ -->
 <section class="step locked" id="step-4" data-step="4">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>閱讀檢查點以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Read the checkpoint to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 2.1 <span class="t">· 摺疊質素（pLDDT）· 5 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>淘汰所有不會摺疊的設計</h2>
-    <p class="lede">設計出來的序列，只有真正捲曲成穩定形狀才有用。AlphaFold 會為每個設計給出逐殘基的信心分數，稱為 <b>pLDDT</b>，範圍 0–100。<b>保留 70 分或以上的設計，其餘一律淘汰。</b></p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="3">提示</button><button class="ghost reset-btn" data-reset="4" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 2.1 <span class="t">· fold quality (pLDDT) · 5 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Throw away anything that won't fold</h2>
+    <p class="lede">A designed sequence only works if it actually curls into a stable shape. AlphaFold gives every design a per-residue confidence called <b>pLDDT</b>, scored 0–100. <b>Keep anything at 70 or above. Discard the rest.</b></p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="3">Hint</button><button class="ghost reset-btn" data-reset="4" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div id="f1say"></div>
     <div class="funnel" id="f1"></div>
-    <div class="row"><button class="btn acc" id="f1check">檢查我的篩選</button><span class="kbd-hint">點擊行項目即可標記為淘汰。</span></div>
+    <div class="row"><button class="btn acc" id="f1check">Check my filter</button><span class="kbd-hint">Click a row to mark it for discarding.</span></div>
     <div id="f1out" aria-live="polite"></div>
   </div>
   <div class="step-foot">
     <div class="discover" id="f1disc" hidden>
-      <span class="k">10 個中有 8 個生還</span>
-      <div class="rule"><span class="tile l">pLDDT &lt; 70</span><span class="tile o">＝</span><span class="tile">模型不確定這個形狀是否真實</span></div>
-      <p>信心不等同於質素——但一個誰都摺疊不出來的設計毫無機會，而且這是最便宜、最值得先檢查的項目。</p>
-      <p>我們的 70 分門檻是教學設定。已發表的 RFdiffusion 結合肽設計流程通常以 <b class="num">pLDDT ≥ 80</b> 作篩選——真實的流程預期要淘汰的設計比我們今天還多。</p>
-      <span class="sci"><span class="flask">Sc</span>由最便宜的先篩起，就是<b>篩選漏斗</b>；每個階段都是一項<b>篩選準則</b></span>
+      <span class="k">8 of 10 survived</span>
+      <div class="rule"><span class="tile l">pLDDT &lt; 70</span><span class="tile o">=</span><span class="tile">the model isn't sure the shape is real</span></div>
+      <p>Confidence is not the same as quality — but a design nobody can fold has no chance at all, and it is the cheapest thing to check first.</p>
+      <p>Our cut-off of 70 is a teaching setting. The published RFdiffusion binder-design protocol typically filters at <b class="num">pLDDT ≥ 80</b> — a real pipeline expects to throw away even more than we did today.</p>
+      <span class="sci"><span class="flask">Sc</span>Filtering cheapest-first is a <b>funnel</b>; each stage is a <b>selection criterion</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="5" hidden>下一步：它真的抓得住嗎？ ↓</button>
+    <button class="btn acc next-btn" data-next="5" hidden>Next: does it actually grip? ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 2.2 ============ -->
 <section class="step locked" id="step-5" data-step="5">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成摺疊檢查以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish the fold check to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 2.2 <span class="t">· 對接信心（ipTM）· 5 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>它真的抓得住 MD2 嗎？</h2>
-    <p class="lede">Boltz-1 把結合肽與 MD2 <i>一起</i>摺疊，並報告 <b>ipTM</b>——一個 0–1 的分數，代表它對接觸介面有多大信心。<b>保留 0.80 或以上的設計。</b></p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="4">提示</button><button class="ghost reset-btn" data-reset="5" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 2.2 <span class="t">· docking confidence (ipTM) · 5 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Does it actually grip MD2?</h2>
+    <p class="lede">Boltz-1 folds the binder <i>together with</i> MD2 and reports <b>ipTM</b>, a 0–1 score for how confident it is about the interface. <b>Keep anything at 0.80 or above.</b></p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="4">Hint</button><button class="ghost reset-btn" data-reset="5" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div id="f2say"></div>
     <div class="funnel" id="f2"></div>
-    <div class="row"><button class="btn acc" id="f2check">檢查我的篩選</button></div>
+    <div class="row"><button class="btn acc" id="f2check">Check my filter</button></div>
     <div id="f2out" aria-live="polite"></div>
   </div>
   <div class="step-foot">
     <div class="discover" id="f2disc" hidden>
-      <span class="k">7 個生還</span>
-      <div class="rule"><span class="tile l">ipTM &lt; 0.80</span><span class="tile o">＝</span><span class="tile">模型無法確定接觸介面</span></div>
-      <p>一個能摺疊但抓不住的結合肽，只是一條漂浮的肽。它還沒來得及擋住任何東西，就已漂走。</p>
-      <span class="sci"><span class="flask">Sc</span>兩個分子黏在一起時會<b>共同摺疊（co-fold）</b>；它們形成的結構就是<b>複合物</b></span>
+      <span class="k">7 survived</span>
+      <div class="rule"><span class="tile l">ipTM &lt; 0.80</span><span class="tile o">=</span><span class="tile">the model can't commit to the interface</span></div>
+      <p>A binder that folds but doesn't hold on is just a floating peptide. It would drift away before it could block anything.</p>
+      <span class="sci"><span class="flask">Sc</span>When two molecules stick together they <b>co-fold</b>; the shape they make is a <b>complex</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="6" hidden>下一步：它安全嗎？ ↓</button>
+    <button class="btn acc next-btn" data-next="6" hidden>Next: is it safe? ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 2.3 ============ -->
 <section class="step locked" id="step-6" data-step="6">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成對接檢查以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish the docking check to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 2.3 <span class="t">· 脫靶安全（MMseqs2）· 5 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>它會不會抓住錯誤的蛋白質？</h2>
-    <p class="lede">MMseqs2 把每個候選者與整個人類蛋白質組比較。如果一個設計看起來像真人類蛋白質的一部分，它可能會結合到我們從未想過的地方。<b>淘汰任何有一個或以上脫靶命中的候選者。</b></p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="5">提示</button><button class="ghost reset-btn" data-reset="6" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 2.3 <span class="t">· off-target safety (MMseqs2) · 5 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Could it grab the wrong protein?</h2>
+    <p class="lede">MMseqs2 compares every candidate against the entire human proteome. If a design looks like a piece of a real human protein, it might bind somewhere we never intended. <b>Discard any candidate with one or more off-target hits.</b></p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="5">Hint</button><button class="ghost reset-btn" data-reset="6" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div id="f3say"></div>
     <div class="funnel" id="f3"></div>
-    <div class="row"><button class="btn acc" id="f3check">檢查我的篩選</button></div>
+    <div class="row"><button class="btn acc" id="f3check">Check my filter</button></div>
     <div id="f3out" aria-live="polite"></div>
   </div>
   <div class="step-foot">
     <div class="discover" id="f3disc" hidden>
-      <span class="k">5 個生還</span>
-      <div class="rule"><span class="tile l">脫靶命中</span><span class="tile o">＝</span><span class="tile">它與人類蛋白質相似</span></div>
-      <p>這項檢查幾乎零成本，而且數秒內完成。所以它排在前面——在任何人花錢做真實實驗之前。</p>
-      <span class="sci"><span class="flask">Sc</span>意外的相似就是<b>序列同源性</b>；避免它就是<b>特異性</b></span>
+      <span class="k">5 survived</span>
+      <div class="rule"><span class="tile l">off-target hit</span><span class="tile o">=</span><span class="tile">it resembles a human protein</span></div>
+      <p>This check costs almost nothing and runs in seconds. So it happens early — before anyone spends money on a real experiment.</p>
+      <span class="sci"><span class="flask">Sc</span>Accidental resemblance is <b>sequence homology</b>; avoiding it is <b>specificity</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="7" hidden>下一步：身體會攻擊它嗎？ ↓</button>
+    <button class="btn acc next-btn" data-next="7" hidden>Next: will the body attack it? ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 2.4 ============ -->
 <section class="step locked" id="step-7" data-step="7">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成安全檢查以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish the safety check to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 2.4 <span class="t">· 免疫原性（MHCflurry + MHCnuggets）· 8 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>免疫系統會攻擊你的藥物嗎？</h2>
-    <p class="lede">你體內每個細胞都會把自身製造的蛋白質碎片展示在表面，嵌在 <b>MHC</b> 分子的凹槽中——就像一個供 T 細胞檢查的陳列櫃。如果<i>你的</i>肽的碎片被強烈展示，T 細胞就會把你的藥物當作外來物。展示途徑有兩條，所以要用<b>兩個引擎</b>檢查：<b>MHCflurry</b> 負責 MHC-I，然後 <b>MHCnuggets</b> 負責 MHC-II。</p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="6">提示</button><button class="ghost reset-btn" data-reset="7" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 2.4 <span class="t">· immunogenicity (MHCflurry + MHCnuggets) · 8 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Will the immune system attack your medicine?</h2>
+    <p class="lede">Every one of your cells shows fragments of the proteins it makes on its surface, held in grooves of <b>MHC</b> molecules — a display case that T-cells inspect. If fragments of <i>your</i> peptide get displayed strongly, T-cells will treat your medicine as foreign. Two display routes exist, so <b>two engines</b> check them: <b>MHCflurry</b> for MHC-I, then <b>MHCnuggets</b> for MHC-II.</p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="6">Hint</button><button class="ghost reset-btn" data-reset="7" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div class="il-grid">
       <div class="il-card">
-        <span class="t">MHC 究竟是甚麼</span>
-        <p>MHC 全稱 <b>主要組織相容性複合體（major histocompatibility complex）</b>——是幾乎每個細胞表面上的一類分子，把蛋白質碎片托起供 T 細胞檢查。細胞製造或吞入的任何東西，最終都會出現在這個展示櫃上。不把碎片識別為「自身」的 T 細胞，就會發動免疫攻擊。</p>
+        <span class="t">What MHC actually is</span>
+        <p>MHC stands for <b>major histocompatibility complex</b> — a family of molecules on the surface of nearly every cell that hold up protein fragments for T-cells to inspect. Whatever a cell makes or swallows eventually shows up in this display. A T-cell that doesn't recognise a fragment as "self" starts an immune attack.</p>
       </div>
       <div class="il-card">
-        <span class="t">為何你的肽必須通過這項檢查</span>
-        <p>如果 MHC 強烈展示你肽的碎片，T 細胞就會標記藥物並把它摧毀。更糟的是，免疫反應會加劇<b>炎症</b>——與傷口敷料應該緩解的事情剛好相反。具免疫原性的藥物不只是效力弱；它可能主動傷害本應治癒的病人。</p>
+        <span class="t">Why your peptide must pass this check</span>
+        <p>If MHC strongly displays fragments of your peptide, T-cells will flag the medicine and destroy it. Worse, the immune reaction adds <b>inflammation</b> — the exact opposite of what a wound dressing is supposed to calm. An immunogenic drug isn't just weak; it can actively harm the patient it was meant to heal.</p>
       </div>
       <div class="il-card">
-        <span class="t">MHC-I 對 MHC-II——兩條途徑</span>
-        <p><b>MHC-I</b> 位於幾乎所有細胞上，展示細胞<i>內部</i>製造的蛋白質碎片；殺手（CD8<sup>+</sup>）T 細胞負責讀取。<b>MHC-II</b> 只出現在免疫哨兵細胞上，它們從<i>外部</i>採集物質，展示給輔助（CD4<sup>+</sup>）T 細胞。放在傷口敷料上的肽，可能經任何一條途徑被拾起展示——所以兩條途徑都要檢查。</p>
+        <span class="t">MHC-I vs MHC-II — two routes in</span>
+        <p><b>MHC-I</b> sits on nearly all cells and displays fragments of proteins made <i>inside</i> the cell; killer (CD8<sup>+</sup>) T-cells read it. <b>MHC-II</b> appears only on immune sentry cells, which sample material from <i>outside</i> and display it to helper (CD4<sup>+</sup>) T-cells. A peptide sitting on a wound dressing can be picked up and displayed through either route — so both must be checked.</p>
       </div>
     </div>
     <div id="f4say"></div>
-    <p class="label">2.4a · MHCflurry · MHC-I 篩查</p>
+    <p class="label">2.4a · MHCflurry · the MHC-I screen</p>
     <div class="funnel" id="f4"></div>
-    <div class="row"><button class="btn acc" id="f4check">檢查我的篩選</button></div>
+    <div class="row"><button class="btn acc" id="f4check">Check my filter</button></div>
     <div id="f4out" aria-live="polite"></div>
     <div id="phase2" hidden style="display:grid;gap:14px">
       <div class="il-grid" style="grid-template-columns:minmax(0,1fr)">
         <div class="il-card">
-          <span class="t">為何需要第二個引擎？MHCflurry 對 MHCnuggets</span>
-          <p>兩條展示途徑需要不同的預測器。<b>MHCflurry</b> 只針對 MHC-I 訓練。<b>MHCnuggets</b> 把預測擴展到 <b>MHC-II</b> 等位基因——它們的結合凹槽不同，抓取碎片的方式也不同。同時運行兩個引擎，意味著每條途徑都由專為該任務而建的模型檢查——而不是把一個模型勉強用於其訓練範圍以外。</p>
+          <span class="t">Why a second engine? MHCflurry vs MHCnuggets</span>
+          <p>The two display routes need different predictors. <b>MHCflurry</b> is trained for MHC-I only. <b>MHCnuggets</b> extends prediction to <b>MHC-II</b> alleles, which have a different binding groove and hold fragments differently. Running both engines means each route is checked by a model built for that job — not one model stretched past what it was trained on.</p>
         </div>
       </div>
-      <p class="label">2.4b · MHCnuggets · MHC-II 篩查</p>
+      <p class="label">2.4b · MHCnuggets · the MHC-II screen</p>
       <div id="f5say"></div>
       <div class="funnel" id="f5"></div>
-      <div class="row"><button class="btn acc" id="f5check">檢查我的篩選</button></div>
+      <div class="row"><button class="btn acc" id="f5check">Check my filter</button></div>
       <div id="f5out" aria-live="polite"></div>
     </div>
   </div>
   <div class="step-foot">
     <div class="discover" id="f4disc" hidden>
-      <span class="k">你只剩下 2 個領先候選者</span>
+      <span class="k">You are down to 2 leads</span>
       <div class="rule"><span class="tile m">10</span><span class="tile o">→</span><span class="tile m">8</span><span class="tile o">→</span><span class="tile m">7</span><span class="tile o">→</span><span class="tile m">5</span><span class="tile o">→</span><span class="tile m">3</span><span class="tile o">→</span><span class="tile m">2</span></div>
-      <p>同樣的 10 個設計，五道截然不同的問題——而免疫問題需要兩個引擎才能妥善回答。每道問題都消除一種設計在真實病人身上失敗的可能。</p>
-      <span class="sci"><span class="flask">Sc</span>會引起免疫反應的序列就是<b>具免疫原性（immunogenic）</b>的</span>
+      <p>Same 10 designs, five very different questions — and the immune question needed two engines to answer properly. Each one removes a way the design could fail in a real patient.</p>
+      <span class="sci"><span class="flask">Sc</span>A sequence that provokes an immune response is <b>immunogenic</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="8" hidden>繼續 ↓</button>
+    <button class="btn acc next-btn" data-next="8" hidden>Continue ↓</button>
   </div>
 </section>
 
 <!-- ============ INTERLUDE · Stage 2 done ============ -->
 <section class="step interlude locked" id="step-8" data-step="8">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成階段 2.4 以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish Stage 2.4 to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 2 · 完成 <span class="t">· 檢查點</span> <span class="step-done-pill">閱讀</span></span>
-    <h2>十個候選者進去，兩個出來。</h2>
-    <p class="lede">你把真實藥物發現流程需要數週運算和數月撥款申請文書的工作，濃縮在大約二十分鐘內完成。</p>
+    <span class="step-no">Stage 2 · Complete <span class="t">· checkpoint</span> <span class="step-done-pill">Read</span></span>
+    <h2>Ten candidates in, two out.</h2>
+    <p class="lede">You have done what a real discovery pipeline does in weeks of compute and months of grant paperwork — in about twenty minutes.</p>
   </header>
   <div class="step-body">
     <div class="il-grid">
       <div class="il-card">
-        <span class="t">你剛才做了甚麼</span>
+        <span class="t">What you just did</span>
         <ul>
-          <li>淘汰了<b>不會摺疊</b>的設計（pLDDT &lt; 70）</li>
-          <li>淘汰了<b>抓不住</b>的設計（ipTM &lt; 0.80）</li>
-          <li>淘汰了與<b>人類蛋白質</b>匹配的設計</li>
-          <li>淘汰了有強 <b>MHC-I</b> 結合肽的設計（MHCflurry）</li>
-          <li>淘汰了有強 <b>MHC-II</b> 結合肽的設計（MHCnuggets）</li>
+          <li>Removed designs that <b>won't fold</b> (pLDDT &lt; 70)</li>
+          <li>Removed designs that <b>won't grip</b> (ipTM &lt; 0.80)</li>
+          <li>Removed designs that match <b>human proteins</b></li>
+          <li>Removed designs with strong <b>MHC-I</b> binders (MHCflurry)</li>
+          <li>Removed designs with strong <b>MHC-II</b> binders (MHCnuggets)</li>
         </ul>
       </div>
       <div class="il-card">
-        <span class="t">你學到了甚麼</span>
+        <span class="t">What you learned</span>
         <ul>
-          <li>每重篩選回答一個<b>不同</b>的問題</li>
-          <li>通過一關不代表能過下一關</li>
-          <li>便宜的檢查先做，昂貴的後做</li>
-          <li>十個留下兩個，是<b>正常</b>的成功率</li>
+          <li>Each filter answers a <b>different</b> question</li>
+          <li>Passing one says nothing about the next</li>
+          <li>Cheap checks run before expensive ones</li>
+          <li>Two survivors out of ten is a <b>normal</b> success rate</li>
         </ul>
       </div>
       <div class="il-card">
-        <span class="t">接下來</span>
+        <span class="t">What's next</span>
         <ul>
-          <li>兩個生還者<b>通過了每重篩選</b></li>
-          <li>但那些篩選全都沒有模擬<b>運動</b></li>
-          <li>體溫會改變一切</li>
-          <li>是時候運行物理模擬了</li>
+          <li>Both survivors <b>passed every filter</b></li>
+          <li>But none of those filters simulated <b>motion</b></li>
+          <li>Body temperature changes everything</li>
+          <li>Time to run the physics</li>
         </ul>
       </div>
     </div>
-    <div class="il-quote">結構是一張照片。<em>模擬是一齣電影。</em>只有電影能讓你看到甚麼會瓦解。</div>
-    <div class="il-next"><span class="il-badge">階段 3 · 物理</span> <span><b>MD 模擬</b> → <b>點突變</b> → 一個優勝候選者</span></div>
+    <div class="il-quote">A structure is a photograph. <em>A simulation is a movie.</em> Only the movie shows you what falls apart.</div>
+    <div class="il-next"><span class="il-badge">Stage 3 · Physics</span> <span><b>MD simulations</b> → <b>point mutations</b> → one winning candidate</span></div>
   </div>
   <div class="step-foot">
-    <button class="btn acc next-btn" data-next="9" hidden>開始物理模擬 ↓</button>
+    <button class="btn acc next-btn" data-next="9" hidden>Start the physics ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 3.1 ============ -->
 <section class="step locked" id="step-9" data-step="9">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>閱讀檢查點以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Read the checkpoint to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 3.1 <span class="t">· 37 °C MD 模擬 · 15 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>它撐得過真實身體環境嗎？</h2>
-    <p class="lede">剩下兩個候選者。結構是一張照片；模擬是一齣電影。我們運行<b>分子動力學（MD）</b>：<b>GROMACS</b> 在 <b>37 °C</b> 下計算每個原子的物理，<b>VMD</b> 則搭建系統並回放軌跡。我們以 <b>RMSD</b> 為每個幀評分——即結構偏離起始位置多遠。低於 <b>2 Å</b>（約幾個氫鍵的寬度）代表摺疊保持穩定。每次運行 <b>10 ns</b>：足以讓最初的抖動平穩，又短得足以篩選候選者。而且我們要運行<b>兩次</b>——先讓肽<b>單獨在水中</b>，再讓它<b>結合到 MD2 上</b>——因為一條自身穩定的肽，可能在結合的一刻瓦解。</p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="7">提示</button><button class="ghost reset-btn" data-reset="9" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 3.1 <span class="t">· 37 °C MD simulations · 15 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Does it survive a real body?</h2>
+    <p class="lede">Two candidates left. A structure is a photograph; a simulation is a movie. We run <b>molecular dynamics (MD)</b>: <b>GROMACS</b> computes the physics of every atom at <b>37 °C</b>, and <b>VMD</b> builds the system and plays the trajectory back. We score each frame by <b>RMSD</b> — how far the structure has drifted from where it started. Under <b>2 Å</b> (about the width of a few hydrogen bonds) means it holds its fold. Each run is <b>10 ns</b>: long enough for the first jitter to settle, short enough to screen candidates. And we run it <b>twice</b> — first the peptide <b>alone in water</b>, then <b>bound to MD2</b> — because a peptide that is stable on its own can still fall apart the moment it binds.</p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="7">Hint</button><button class="ghost reset-btn" data-reset="9" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div class="panel" style="display:grid;gap:12px">
-      <div class="row" style="justify-content:space-between"><b>模擬 1 · 肽單獨在水中</b><span class="kbd-hint">RMSD 對時間</span></div>
-      <p style="font-size:14px;color:var(--ink-2)">第一個問題：肽靠自己能否保持摺疊？兩個候選者都進入 37 °C 的水盒，運行 10 ns。</p>
-      <div class="canvas-box" style="height:280px"><canvas id="mdChart1" aria-label="兩個領先候選者在水中 10 納秒內的 RMSD"></canvas></div>
-      <div class="row"><button class="btn acc" id="mdRun1">運行 10 ns 模擬 ▸</button><span class="kbd-hint" id="mdClock1">0.0 ns</span></div>
+      <div class="row" style="justify-content:space-between"><b>Simulation 1 · peptide alone in water</b><span class="kbd-hint">RMSD vs time</span></div>
+      <p style="font-size:14px;color:var(--ink-2)">First question: does the peptide hold its fold on its own? Both candidates go into a water box at 37 °C for 10 ns.</p>
+      <div class="canvas-box" style="height:280px"><canvas id="mdChart1" aria-label="RMSD over 10 nanoseconds in water for both lead candidates"></canvas></div>
+      <div class="row"><button class="btn acc" id="mdRun1">Run 10 ns simulation ▸</button><span class="kbd-hint" id="mdClock1">0.0 ns</span></div>
       <div class="split">
         <div class="panel" id="mdCardA1" style="display:grid;gap:8px">
           <div class="row" style="justify-content:space-between"><b class="num">MD2B-01</b><span class="num" id="mdRmsdA1">—</span></div>
-          <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneA1" aria-label="水中的肽 A"></canvas></div>
-          <p style="font-size:14px;color:var(--ink-2)" id="mdVerdA1">尚未測試。</p>
+          <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneA1" aria-label="Peptide A in water"></canvas></div>
+          <p style="font-size:14px;color:var(--ink-2)" id="mdVerdA1">Not tested yet.</p>
         </div>
         <div class="panel" id="mdCardB1" style="display:grid;gap:8px">
           <div class="row" style="justify-content:space-between"><b class="num">MD2B-10</b><span class="num" id="mdRmsdB1">—</span></div>
-          <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneB1" aria-label="水中的肽 B"></canvas></div>
-          <p style="font-size:14px;color:var(--ink-2)" id="mdVerdB1">尚未測試。</p>
+          <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneB1" aria-label="Peptide B in water"></canvas></div>
+          <p style="font-size:14px;color:var(--ink-2)" id="mdVerdB1">Not tested yet.</p>
         </div>
       </div>
     </div>
     <div class="row" style="justify-content:center;margin:4px 0">
-      <button class="btn acc" id="mdGate" disabled>繼續至結合模擬 ▸</button>
+      <button class="btn acc" id="mdGate" disabled>Continue to the bound simulation ▸</button>
     </div>
     <div id="mdPhase2" hidden>
       <div class="panel" style="display:grid;gap:12px">
-        <div class="row" style="justify-content:space-between"><b>模擬 2 · 肽結合在 MD2 上</b><span class="kbd-hint">RMSD 對時間</span></div>
-        <p style="font-size:14px;color:var(--ink-2)">第二個問題：<b>複合物</b>能否保持？同樣 10 ns、同樣的水盒——但這次每條肽都對接到 MD2 上，如同它在體內的位置。</p>
-        <div class="canvas-box" style="height:280px"><canvas id="mdChart2" aria-label="兩個領先候選者結合在 MD2 上 10 納秒內的 RMSD"></canvas></div>
-        <div class="row"><button class="btn acc" id="mdRun2">運行 10 ns 模擬 ▸</button><span class="kbd-hint" id="mdClock2">0.0 ns</span></div>
+        <div class="row" style="justify-content:space-between"><b>Simulation 2 · peptide bound to MD2</b><span class="kbd-hint">RMSD vs time</span></div>
+        <p style="font-size:14px;color:var(--ink-2)">Second question: does the <b>complex</b> hold? Same 10 ns, same water box — but now each peptide is docked onto MD2, the way it would sit in the body.</p>
+        <div class="canvas-box" style="height:280px"><canvas id="mdChart2" aria-label="RMSD over 10 nanoseconds bound to MD2 for both lead candidates"></canvas></div>
+        <div class="row"><button class="btn acc" id="mdRun2">Run 10 ns simulation ▸</button><span class="kbd-hint" id="mdClock2">0.0 ns</span></div>
         <div class="split">
           <div class="panel" id="mdCardA2" style="display:grid;gap:8px">
             <div class="row" style="justify-content:space-between"><b class="num">MD2B-01</b><span class="num" id="mdRmsdA2">—</span></div>
-            <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneA2" aria-label="MD2 上的複合物 A"></canvas></div>
-            <p style="font-size:14px;color:var(--ink-2)" id="mdVerdA2">尚未測試。</p>
+            <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneA2" aria-label="Complex A on MD2"></canvas></div>
+            <p style="font-size:14px;color:var(--ink-2)" id="mdVerdA2">Not tested yet.</p>
           </div>
           <div class="panel" id="mdCardB2" style="display:grid;gap:8px">
             <div class="row" style="justify-content:space-between"><b class="num">MD2B-10</b><span class="num" id="mdRmsdB2">—</span></div>
-            <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneB2" aria-label="MD2 上的複合物 B"></canvas></div>
-            <p style="font-size:14px;color:var(--ink-2)" id="mdVerdB2">尚未測試。</p>
+            <div class="canvas-box" style="height:96px;background:transparent;border:0"><canvas id="mdSceneB2" aria-label="Complex B on MD2"></canvas></div>
+            <p style="font-size:14px;color:var(--ink-2)" id="mdVerdB2">Not tested yet.</p>
           </div>
         </div>
       </div>
     </div>
     <div id="mdAsk" hidden>
-      <p class="label">你會選哪一個繼續？</p>
+      <p class="label">Which one do you take forward?</p>
       <div class="choices" id="mdPick" style="margin-top:8px">
         <button class="choice" data-v="MD2B-01">MD2B-01</button>
         <button class="choice" data-v="MD2B-10">MD2B-10</button>
@@ -863,258 +863,258 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
   </div>
   <div class="step-foot">
     <div class="discover" id="mddisc" hidden>
-      <span class="k">只有一個撐過兩次模擬</span>
-      <div class="rule"><span class="tile l">結合時 RMSD &gt; 2 Å</span><span class="tile o">＝</span><span class="tile">結合肽解摺疊、鬆開</span></div>
-      <p>兩個候選者在純水中都穩定。只有 <b>MD2B-10</b> 在 MD2 上也穩定。水中穩定告訴你摺疊是真實的；結合模擬告訴你抓力是真實的。</p>
-      <span class="sci"><span class="flask">Sc</span>用物理學持續搖晃一個分子，就是<b>分子動力學</b></span>
+      <span class="k">Only one survives both simulations</span>
+      <div class="rule"><span class="tile l">RMSD &gt; 2 Å when bound</span><span class="tile o">=</span><span class="tile">the binder unfolds and lets go</span></div>
+      <p>Both candidates were stable in plain water. Only <b>MD2B-10</b> was also stable on MD2. Water stability told you the fold is real; the bound simulation told you the grip is real.</p>
+      <span class="sci"><span class="flask">Sc</span>Shaking a molecule with physics for a while is <b>molecular dynamics</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="10" hidden>下一步：演化它 ↓</button>
+    <button class="btn acc next-btn" data-next="10" hidden>Next: evolve it ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 3.2 ============ -->
 <section class="step locked" id="step-10" data-step="10">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成 MD 模擬以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish the MD simulation to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 3.2 <span class="t">· in silico 點突變演化 · 10 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>讓抓力更強</h2>
-    <p class="lede">我們的優勝者抓得住，但抓力較弱。結合自由能 <b>ΔG</b> 目前是 <b class="num" id="dgStart">−6.6</b> kcal/mol。我們需要 <b>≤ −8.0</b>。點擊殘基嘗試突變。有五個位置已鎖定——它們直接接觸熱點。</p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="8">提示</button><button class="ghost reset-btn" data-reset="10" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 3.2 <span class="t">· in silico point evolution · 10 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Make the grip stronger</h2>
+    <p class="lede">Our winner holds on, but weakly. Binding free energy <b>ΔG</b> is currently <b class="num" id="dgStart">−6.6</b> kcal/mol. We need <b>≤ −8.0</b>. Click a residue to try a mutation. Five positions are locked — they touch the hotspots.</p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="8">Hint</button><button class="ghost reset-btn" data-reset="10" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div class="panel" style="display:grid;gap:12px">
       <div class="row" style="justify-content:space-between;align-items:baseline">
-        <span class="label">候選者 <span class="num" id="evoId">MD2B-10</span></span>
+        <span class="label">Candidate <span class="num" id="evoId">MD2B-10</span></span>
         <span class="num" style="font-size:19px;font-weight:700" id="dgVal">−6.6 kcal/mol</span>
       </div>
       <div class="gauge"><i id="dgBar" style="width:35%"></i><span class="mark" style="left:60%"></span></div>
       <div class="row" style="justify-content:space-between;font-family:var(--mono);font-size:11.5px;color:var(--ink-2);font-weight:700">
-        <span>−6.0 弱</span><span>−8.0 目標</span><span>−10.0 非常強</span>
+        <span>−6.0 weak</span><span>−8.0 target</span><span>−10.0 very strong</span>
       </div>
       <div class="seq-strip" id="seqStrip"></div>
       <div id="mutPanel"></div>
       <div class="row">
-        <button class="btn soft" id="ucbBtn">問問 UCB：下一步該突變哪個？</button>
-        <button class="ghost" id="mutUndo">撤銷上次</button>
-        <button class="ghost" id="mutReset">重設序列</button>
+        <button class="btn soft" id="ucbBtn">Ask UCB: which mutation next?</button>
+        <button class="ghost" id="mutUndo">Undo last</button>
+        <button class="ghost" id="mutReset">Reset sequence</button>
       </div>
     </div>
     <div id="evoLog" aria-live="polite"></div>
     <div class="panel" id="ucbPanel" hidden style="display:grid;gap:8px">
-      <span class="label">UCB 是如何選擇的</span>
-      <p style="font-size:15px;color:var(--ink-2)">上置信界（UCB）以 <b class="num">μ + c √(ln N / n)</b> 為每個位置評分——迄今看起來有多好（μ），加上未充分探索的獎勵（平方根項）。然後挑選最高分的位置。這就是你在嘗試新事物與沿用已知有效方法之間的平衡之道。</p>
+      <span class="label">How UCB chose that</span>
+      <p style="font-size:15px;color:var(--ink-2)">Upper Confidence Bound scores every position as <b class="num">μ + c √(ln N / n)</b> — how good it <i>looks</i> so far (μ), plus a bonus for being under-explored (the square-root term). Then it picks the highest score. That is how you balance trying new things against using what already works.</p>
       <div class="num" id="ucbTable" style="font-size:13px;color:var(--ink-2)"></div>
     </div>
   </div>
   <div class="step-foot">
     <div class="discover" id="evodisc" hidden>
-      <span class="k">夠強，可以構建</span>
-      <div class="rule"><span class="tile m">ΔG ≤ −8.0</span><span class="tile o">＝</span><span class="tile">值得合成</span></div>
-      <p>我們試的每個突變都由模型測試，而非移液器。濕實驗室要花數星期才能測試這麼多變體——模型把數千個選項收窄到少數幾個真正值得測試的。</p>
-      <span class="sci"><span class="flask">Sc</span>在探索與利用之間取得平衡來搜尋空間，就是<b>貝葉斯優化</b></span>
+      <span class="k">Strong enough to build</span>
+      <div class="rule"><span class="tile m">ΔG ≤ −8.0</span><span class="tile o">=</span><span class="tile">worth synthesising</span></div>
+      <p>Every mutation we tried was tested by a model, not a pipette. A wet lab would take weeks to test this many variants — the model narrows thousands of options down to a handful worth testing for real.</p>
+      <span class="sci"><span class="flask">Sc</span>Searching a space by balancing exploration and exploitation is <b>Bayesian optimisation</b></span>
     </div>
-    <button class="btn acc next-btn" data-next="11" hidden>繼續 ↓</button>
+    <button class="btn acc next-btn" data-next="11" hidden>Continue ↓</button>
   </div>
 </section>
 
 <!-- ============ INTERLUDE · Stage 3 done ============ -->
 <section class="step interlude locked" id="step-11" data-step="11">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>完成階段 3.2 以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Finish Stage 3.2 to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 3 · 完成 <span class="t">· 檢查點</span> <span class="step-done-pill">閱讀</span></span>
-    <h2>一個優勝者，通過了物理測試。</h2>
-    <p class="lede">分數說兩個候選者不相上下。模擬說並非如此。這正是這個階段的全部價值。</p>
+    <span class="step-no">Stage 3 · Complete <span class="t">· checkpoint</span> <span class="step-done-pill">Read</span></span>
+    <h2>One winner, tested in physics.</h2>
+    <p class="lede">The scores said two candidates were equal. The simulation said they were not. That is the whole value of this stage.</p>
   </header>
   <div class="step-body">
     <div class="il-grid">
       <div class="il-card">
-        <span class="t">你剛才做了甚麼</span>
+        <span class="t">What you just did</span>
         <ul>
-          <li>在 37 °C 下，於水中運行 <b>10 ns</b> MD，並在結合 MD2 的狀態下運行 <b>10 ns</b></li>
-          <li>淘汰了 <b>RMSD 持續攀升</b>的候選者</li>
-          <li>透過<b>突變殘基</b>改善結合能</li>
-          <li>保持<b>接觸殘基</b>原封不動</li>
+          <li>Ran <b>10 ns</b> of MD in water and <b>10 ns</b> bound to MD2 at 37 °C</li>
+          <li>Dropped the candidate whose <b>RMSD climbed</b></li>
+          <li>Improved binding energy by <b>mutating residues</b></li>
+          <li>Kept the <b>contact residues</b> untouched</li>
         </ul>
       </div>
       <div class="il-card">
-        <span class="t">你學到了甚麼</span>
+        <span class="t">What you learned</span>
         <ul>
-          <li>分數與模擬量度的是<b>不同的東西</b></li>
-          <li>即使是強結合肽也可能被搖散</li>
-          <li>不是每個位置都可以安全突變</li>
-          <li>UCB 高效搜尋——毋須暴力窮舉</li>
+          <li>Scores and simulations measure <b>different things</b></li>
+          <li>Even strong binders can shake apart</li>
+          <li>Not every position is safe to mutate</li>
+          <li>UCB searches efficiently — no brute force</li>
         </ul>
       </div>
       <div class="il-card">
-        <span class="t">接下來</span>
+        <span class="t">What's next</span>
         <ul>
-          <li>我們有一條<b>蛋白質序列</b></li>
-          <li>但我們訂購的不是<i>蛋白質</i>——而是 <b>DNA</b></li>
-          <li>同一分子，可以有許多可能的基因</li>
-          <li><i>大腸桿菌</i>讀哪個密碼子最快？</li>
+          <li>We have a <b>protein sequence</b></li>
+          <li>But we can't order <i>protein</i> — we order <b>DNA</b></li>
+          <li>Same molecule, many possible genes</li>
+          <li>Which codons will <i>E. coli</i> read fastest?</li>
         </ul>
       </div>
     </div>
-    <div class="il-quote">只以分數形式存在的設計算不上設計。<em>最終你還是要寫下基因。</em></div>
-    <div class="il-next"><span class="il-badge">階段 4 · 構建</span> <span><b>反轉譯</b> → <b>生物安全測驗</b> → 你的最終候選者</span></div>
+    <div class="il-quote">A design that only exists as a score is not a design. <em>Eventually you have to write the gene.</em></div>
+    <div class="il-next"><span class="il-badge">Stage 4 · Build</span> <span><b>Reverse translation</b> → <b>biosafety quiz</b> → your final candidate</span></div>
   </div>
   <div class="step-foot">
-    <button class="btn acc next-btn" data-next="12" hidden>寫下基因 ↓</button>
+    <button class="btn acc next-btn" data-next="12" hidden>Write the gene ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 4.1 ============ -->
 <section class="step locked" id="step-12" data-step="12">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>閱讀檢查點以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Read the checkpoint to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 4.1 <span class="t">· 反轉譯 · 5 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>寫下基因</h2>
-    <p class="lede">蛋白質由 DNA 建構，每次三個字母。大部分氨基酸都有幾個可能的密碼子——但<i>大腸桿菌</i>讀取某些密碼子的速度遠快於其他。下面是真實的<i>大腸桿菌</i>密碼子使用頻率表，你可以自己作決定。</p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="9">提示</button><button class="ghost reset-btn" data-reset="12" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 4.1 <span class="t">· reverse translation · 5 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Write the gene</h2>
+    <p class="lede">Proteins are built from DNA, three letters at a time. Most amino acids have several possible triplets — but <i>E. coli</i> reads some of them much faster than others. Below is a real <i>E. coli</i> codon usage table so you can decide for yourself.</p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="9">Hint</button><button class="ghost reset-btn" data-reset="12" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div class="panel" style="display:grid;gap:10px">
-      <span class="label">優勝肽</span>
+      <span class="label">Winning peptide</span>
       <div class="seq-strip" id="winSeq"></div>
     </div>
 
     <div class="panel" style="display:grid;gap:10px">
       <div class="row" style="justify-content:space-between;align-items:baseline">
-        <span class="label">參考 · 大腸桿菌 K-12 密碼子使用頻率</span>
-        <span class="kbd-hint">每個密碼子用於該氨基酸的頻率</span>
+        <span class="label">Reference · E. coli K-12 codon usage</span>
+        <span class="kbd-hint">how often each triplet is used for that amino acid</span>
       </div>
-      <p style="font-size:14.5px;color:var(--ink-2)">遺傳密碼是冗餘的：64 個密碼子只編碼 20 種氨基酸。大腸桿菌的高表達基因幾乎只使用<b>綠色</b>密碼子，因為對應的 tRNA 數量多得多——核糖體永遠不用停下來等。</p>
+      <p style="font-size:14.5px;color:var(--ink-2)">The genetic code is redundant: 64 triplets spell only 20 amino acids. Highly expressed genes in <i>E. coli</i> use the <b>green</b> codons almost exclusively, because there is far more tRNA for them — the ribosome never has to pause and wait.</p>
       <div style="overflow-x:auto">
         <table class="codon-table" id="codonTable"></table>
       </div>
     </div>
 
     <div class="panel" style="display:grid;gap:0">
-      <span class="label" style="margin-bottom:6px">現在為每個位置挑選一個密碼子——永遠選大腸桿菌最偏好的那一個</span>
+      <span class="label" style="margin-bottom:6px">Now pick one codon per position — always choose the one E. coli prefers most</span>
       <div id="codonRows"></div>
     </div>
     <div id="codonSay" aria-live="polite"></div>
 
     <div id="geneWrap" hidden style="display:grid;gap:10px">
-      <span class="label">完整基因 · 5′ → 3′</span>
+      <span class="label">Full gene · 5′ → 3′</span>
       <div class="gene" id="geneOut"></div>
       <div class="row">
-        <span class="sci"><span class="flask">Sc</span><b>ATG</b> 啟動基因，<b>TAA</b> 終止基因</span>
-        <span class="sci"><span class="flask">Sc</span>選擇快速的密碼子，就是<b>密碼子優化</b></span>
+        <span class="sci"><span class="flask">Sc</span><b>ATG</b> starts the gene, <b>TAA</b> stops it</span>
+        <span class="sci"><span class="flask">Sc</span>Choosing the fast codons is <b>codon optimisation</b></span>
       </div>
     </div>
   </div>
   <div class="step-foot">
     <div class="discover" id="codondisc" hidden>
-      <span class="k">同一蛋白質，許多可能的基因</span>
-      <div class="rule"><span class="tile m">4³ = 64</span><span class="tile o">個密碼子對應</span><span class="tile m">20</span><span class="tile o">種氨基酸</span></div>
-      <p>冗餘就是免費的優化空間。同樣的藥物，更容易製造——零額外成本，而且最終蛋白質不變。</p>
+      <span class="k">Same protein, many possible genes</span>
+      <div class="rule"><span class="tile m">4³ = 64</span><span class="tile o">codons for</span><span class="tile m">20</span><span class="tile o">amino acids</span></div>
+      <p>Redundancy is free room for optimisation. Same medicine, easier to manufacture — at no extra cost and with no change to the final protein.</p>
     </div>
-    <button class="btn acc next-btn" data-next="13" hidden>下一步：安全檢查 ↓</button>
+    <button class="btn acc next-btn" data-next="13" hidden>Next: safety check ↓</button>
   </div>
 </section>
 
 <!-- ============ STAGE 4.2 ============ -->
 <section class="step locked" id="step-13" data-step="13">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>構建基因以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Build the gene to unlock</span>
   <header class="step-head">
-    <span class="step-no">階段 4.2 <span class="t">· 實驗室合規 · 5 分鐘</span> <span class="step-done-pill">完成</span></span>
-    <h2>通過安全檢查</h2>
-    <p class="lede">訂購任何 DNA 之前，先回答三個問題。選擇前請閱讀每個選項下的解釋——有些選項聽起來合理，卻保護錯對象。</p>
-    <span class="head-actions"><button class="ghost hint-btn" data-hint="10">提示</button><button class="ghost reset-btn" data-reset="13" hidden title="從頭重做此階段——其他階段不受影響">重設</button></span>
+    <span class="step-no">Stage 4.2 <span class="t">· lab compliance · 5 min</span> <span class="step-done-pill">Done</span></span>
+    <h2>Clear the safety check</h2>
+    <p class="lede">Before any DNA is ordered, three questions. Read the explanation under each option before you choose — some of them sound reasonable but protect the wrong thing.</p>
+    <span class="head-actions"><button class="ghost hint-btn" data-hint="10">Hint</button><button class="ghost reset-btn" data-reset="13" hidden title="Redo this stage from the beginning — other stages untouched">Reset</button></span>
   </header>
   <div class="step-body">
     <div class="quiz" id="quiz"></div>
     <div id="quizSay" aria-live="polite"></div>
   </div>
   <div class="step-foot">
-    <button class="btn acc next-btn" data-next="14" hidden>看看你構建了甚麼 ↓</button>
+    <button class="btn acc next-btn" data-next="14" hidden>See what you built ↓</button>
   </div>
 </section>
 
 <!-- ============ FINAL SUMMARY (replaces certificate) ============ -->
 <section class="summary-card step locked" id="step-14" data-step="14" style="padding:0">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>通過安全測驗以解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Pass the safety quiz to unlock</span>
   <div class="sum-head">
     <div style="display:grid;gap:6px">
-      <span class="eyebrow">De Novo Bio-Design Studio · 你實際構建的成果</span>
-      <h2>你的候選者：由零開始到基因</h2>
+      <span class="eyebrow">De Novo Bio-Design Studio · what you actually built</span>
+      <h2>Your candidate, from scratch to gene</h2>
     </div>
   </div>
   <div class="sum-body step-body">
     <div class="sum-grid">
-      <div class="sum-field"><span class="label">候選者</span><span class="v num" id="lcId">—</span></div>
-      <div class="sum-field"><span class="label">摺疊信心 · pLDDT</span><span class="v num" id="lcPlddt">—</span></div>
-      <div class="sum-field"><span class="label">介面信心 · ipTM</span><span class="v num" id="lcIptm">—</span></div>
-      <div class="sum-field"><span class="label">結合能 · ΔG</span><span class="v num" id="lcDg">—</span></div>
+      <div class="sum-field"><span class="label">Candidate</span><span class="v num" id="lcId">—</span></div>
+      <div class="sum-field"><span class="label">Fold confidence · pLDDT</span><span class="v num" id="lcPlddt">—</span></div>
+      <div class="sum-field"><span class="label">Interface confidence · ipTM</span><span class="v num" id="lcIptm">—</span></div>
+      <div class="sum-field"><span class="label">Binding energy · ΔG</span><span class="v num" id="lcDg">—</span></div>
     </div>
 
     <div style="display:grid;gap:6px">
-      <span class="label">設計肽序列</span>
+      <span class="label">Designed peptide sequence</span>
       <div class="sum-seq" id="lcSeq">—</div>
     </div>
 
     <div style="display:grid;gap:6px">
-      <span class="label">合成基因 · 5′ → 3′</span>
+      <span class="label">Synthesised gene · 5′ → 3′</span>
       <div class="sum-gene" id="lcGene">—</div>
     </div>
 
     <div class="il-grid" style="margin-top:6px">
       <div class="il-card" style="background:var(--surface-2);border-color:var(--line)">
-        <span class="t">階段 1 · 生成</span>
+        <span class="t">Stage 1 · Generate</span>
         <ul>
-          <li><b>AI 負責提出</b>——不作判斷</li>
-          <li>貼合熱點 ≠ 穩定摺疊</li>
-          <li>每個候選者都是一個假設</li>
+          <li><b>AI proposes</b> — it doesn't judge</li>
+          <li>Fitting the hotspot ≠ folding stably</li>
+          <li>Every candidate is a hypothesis</li>
         </ul>
       </div>
       <div class="il-card" style="background:var(--surface-2);border-color:var(--line)">
-        <span class="t">階段 2 · 篩選</span>
+        <span class="t">Stage 2 · Filter</span>
         <ul>
-          <li>接連五道<b>不同</b>的問題</li>
-          <li>便宜的檢查先於昂貴的</li>
-          <li>10 → 2 是健康的成功率</li>
+          <li>Five <b>different</b> questions in a row</li>
+          <li>Cheap checks before expensive ones</li>
+          <li>10 → 2 is a healthy success rate</li>
         </ul>
       </div>
       <div class="il-card" style="background:var(--surface-2);border-color:var(--line)">
-        <span class="t">階段 3 · 物理</span>
+        <span class="t">Stage 3 · Physics</span>
         <ul>
-          <li>分數是快照，<b>模擬是電影</b></li>
-          <li>保護接觸殘基，突變其餘部分</li>
-          <li>聰明地搜尋空間——UCB 勝過暴力窮舉</li>
+          <li>Scores are snapshots, <b>simulation is a movie</b></li>
+          <li>Protect contact residues, mutate the rest</li>
+          <li>Search a space intelligently — UCB &gt; brute force</li>
         </ul>
       </div>
       <div class="il-card" style="background:var(--surface-2);border-color:var(--line)">
-        <span class="t">階段 4 · 構建</span>
+        <span class="t">Stage 4 · Build</span>
         <ul>
-          <li>同一蛋白質 → <b>許多可能的基因</b></li>
-          <li>配合宿主的密碼子偏好</li>
-          <li>訂購 DNA <b>前</b>先檢查安全</li>
+          <li>Same protein → <b>many possible genes</b></li>
+          <li>Match the host's codon preference</li>
+          <li>Check safety <b>before</b> ordering DNA</li>
         </ul>
       </div>
     </div>
 
-    <div class="il-quote" style="background:var(--acc);color:#fff">真正的啟示不是 AI 能設計蛋白質。<em style="color:var(--acc-soft)">而是好的設計既需要生成器，也需要篩選器——而篩選器正是保障病人安全的關鍵。</em></div>
+    <div class="il-quote" style="background:var(--acc);color:#fff">The real lesson is not that AI designs proteins. <em style="color:var(--acc-soft)">It is that a good design needs both a generator and a filter — and the filter is what keeps patients safe.</em></div>
 
-    <div class="rv row"><button class="btn acc" id="openStudioBtn">開放工作室：更改每個門檻 ↓</button></div>
+    <div class="rv row"><button class="btn acc" id="openStudioBtn">Open Studio: change every threshold ↓</button></div>
   </div>
 </section>
 
 <!-- ============ OPEN STUDIO ============ -->
 <section class="step locked" id="step-15" data-step="15">
-  <span class="lock-veil"><svg><use href="#i-lock"/></svg>總結後解鎖</span>
+  <span class="lock-veil"><svg><use href="#i-lock"/></svg>Unlocks after the summary</span>
   <header class="step-head">
-    <span class="step-no">開放工作室 <span class="t">· 額外環節</span></span>
-    <h2>如果我們的門檻不同，會怎樣？</h2>
-    <p class="lede">你用的每重篩選，都是某個人選定的數字。移動它們，觀察漏斗的變化。這樣你就能找出哪個決定真正關鍵。</p>
+    <span class="step-no">Open Studio <span class="t">· bonus</span></span>
+    <h2>What if our cut-offs were different?</h2>
+    <p class="lede">Every filter you used was a number somebody chose. Move them and watch the funnel change. This is how you find out which decision actually mattered.</p>
   </header>
   <div class="step-body">
     <div class="split wide">
       <div class="step-body" style="gap:14px" id="studioSliders"></div>
       <div class="step-body" style="gap:14px">
-        <div class="canvas-box" style="height:280px"><canvas id="studioCanvas" aria-label="各篩選設定下的漏斗存活情況"></canvas></div>
+        <div class="canvas-box" style="height:280px"><canvas id="studioCanvas" aria-label="Funnel survival for each filter setting"></canvas></div>
         <div id="studioSay" aria-live="polite"></div>
-        <div class="row"><button class="ghost" id="studioReset">重設為工作坊設定</button></div>
+        <div class="row"><button class="ghost" id="studioReset">Reset to the workshop settings</button></div>
       </div>
     </div>
   </div>
@@ -1122,28 +1122,28 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 
 </main>
 
-<aside class="notebook" id="notebook" aria-label="實驗筆記本">
-  <div class="nb-head"><h3>實驗筆記本</h3><span class="nb-count" id="nbCount">0 條筆記</span><button class="ghost nb-close" id="nbClose" aria-label="關閉實驗筆記本">關閉</button></div>
-  <div class="nb-sec"><span class="label">我們所作的決定</span><ul id="nbAssume"><li class="empty">在階段 1.1 鎖定熱點</li></ul></div>
-  <div class="nb-sec"><span class="label">找到的數值</span><ul id="nbValues"><li class="empty">尚未量度任何數值</li></ul></div>
-  <div class="nb-sec"><span class="label">科學家使用的詞彙</span><div class="nb-badges" id="nbBadges"><span class="kbd-hint">邊做邊收集吧</span></div></div>
+<aside class="notebook" id="notebook" aria-label="Lab notebook">
+  <div class="nb-head"><h3>Lab notebook</h3><span class="nb-count" id="nbCount">0 entries</span><button class="ghost nb-close" id="nbClose" aria-label="Close notebook">Close</button></div>
+  <div class="nb-sec"><span class="label">Things we decided</span><ul id="nbAssume"><li class="empty">Lock the hotspots in Stage 1.1</li></ul></div>
+  <div class="nb-sec"><span class="label">Values found</span><ul id="nbValues"><li class="empty">Nothing measured yet</li></ul></div>
+  <div class="nb-sec"><span class="label">Words scientists use</span><div class="nb-badges" id="nbBadges"><span class="kbd-hint">Collect them as you go</span></div></div>
 </aside>
 </div>
 
 <dialog id="hintDlg">
   <form method="dialog" class="dlg">
-    <h3 id="hintTitle">提示</h3>
+    <h3 id="hintTitle">Hint</h3>
     <p id="hintText"></p>
     <details>
-      <summary class="kbd-hint">輔助碼</summary>
+      <summary class="kbd-hint">Helper code</summary>
       <div class="row" style="margin-top:10px">
-        <label class="sr" for="helperCode">輔助碼</label>
+        <label class="sr" for="helperCode">Helper code</label>
         <input id="helperCode" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="····">
-        <button class="btn soft" type="button" id="helperGo">解鎖</button>
+        <button class="btn soft" type="button" id="helperGo">Unlock</button>
       </div>
-      <p class="kbd-hint" id="helperMsg" style="margin-top:6px">供工作坊助手使用：解鎖並完成此階段。</p>
+      <p class="kbd-hint" id="helperMsg" style="margin-top:6px">For workshop helpers: unlocks and completes this stage.</p>
     </details>
-    <div class="row" style="justify-content:flex-end"><button class="btn">明白了</button></div>
+    <div class="row" style="justify-content:flex-end"><button class="btn">Got it</button></div>
   </form>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
@@ -1236,16 +1236,16 @@ function renderNotebook(fresh) {
   const ua = $("#nbAssume"), uv = $("#nbValues"), ub = $("#nbBadges");
   ua.innerHTML = S.decide.length
     ? S.decide.map(a => `<li class="${a === fresh ? "fresh" : ""}">${a}</li>`).join("")
-    : `<li class="empty">在階段 1.1 鎖定熱點</li>`;
+    : `<li class="empty">Lock the hotspots in Stage 1.1</li>`;
   const vals = Object.entries(S.values);
   uv.innerHTML = vals.length
     ? vals.map(([k, o]) => `<li class="nb-val ${k === fresh ? "fresh" : ""}"><span>${o.label}</span><b>${o.val}</b></li>`).join("")
-    : `<li class="empty">尚未量度任何數值</li>`;
+    : `<li class="empty">Nothing measured yet</li>`;
   ub.innerHTML = S.badges.length
     ? S.badges.map(b => `<span class="nb-badge">${b}</span>`).join("")
-    : `<span class="kbd-hint">邊做邊收集吧</span>`;
+    : `<span class="kbd-hint">Collect them as you go</span>`;
   const n = S.decide.length + vals.length + S.badges.length;
-  $("#nbCount").textContent = n + " 條筆記";
+  $("#nbCount").textContent = n + (n === 1 ? " entry" : " entries");
   $("#nbToggleCount").textContent = n;
 }
 $("#nbToggle").addEventListener("click", () => {
@@ -1444,11 +1444,11 @@ const survivorsAfter = upTo => CANDS.filter(c => {
    7 · steps registry
    ============================================================ */
 const Steps = {};
-const LABELS = ["開始", "1.1", "1.2", "S1", "2.1", "2.2", "2.3", "2.4", "S2", "3.1", "3.2", "S3", "4.1", "4.2", "總結", "工作室"];
-const NAMES = ["任務", "目標設定", "生成", "階段 1 檢查點",
-               "摺疊質素", "對接", "脫靶", "免疫原性",
-               "階段 2 檢查點", "MD 穩定性", "演化", "階段 3 檢查點",
-               "反轉譯", "認證", "總結", "開放工作室"];
+const LABELS = ["Go", "1.1", "1.2", "S1", "2.1", "2.2", "2.3", "2.4", "S2", "3.1", "3.2", "S3", "4.1", "4.2", "Sum", "Studio"];
+const NAMES = ["Mission", "Target setup", "Generation", "Stage 1 checkpoint",
+               "Fold quality", "Docking", "Off-target", "Immunogenicity",
+               "Stage 2 checkpoint", "MD stability", "Evolution", "Stage 3 checkpoint",
+               "Reverse translation", "Certification", "Summary", "Open Studio"];
 const section = n => document.querySelector(`[data-step="${n}"]`);
 const unlocked = n => n === 0 || !!S.reached[n] || !!S.done[n - 1];
 
@@ -1458,7 +1458,7 @@ function buildProgress() {
   nav.addEventListener("click", e => {
     const b = e.target.closest(".pchip"); if (!b) return;
     const n = +b.dataset.go;
-    if (!unlocked(n)) { toast(`請先完成「${NAMES[n - 1]}」`); return; }
+    if (!unlocked(n)) { toast(`Finish ${NAMES[n - 1]} first`); return; }
     goTo(n);
   });
 }
@@ -1487,7 +1487,7 @@ function complete(n) {
   const nx = section(n + 1);
   if (nx) {
     nx.classList.remove("unlocking"); void nx.offsetWidth; nx.classList.add("unlocking");
-    if (n > 0) toast(n === 13 ? "總結已解鎖" : n === 14 ? "開放工作室已解鎖" : `階段 ${LABELS[n + 1]} 已解鎖`);
+    if (n > 0) toast(n === 13 ? "Summary unlocked" : n === 14 ? "Open Studio unlocked" : `Stage ${LABELS[n + 1]} unlocked`);
     Steps[n + 1]?.onUnlock?.();
   }
 }
@@ -1504,12 +1504,12 @@ function goTo(n) {
 function resetStep(n) {
   if (!S.done[n] || !Steps[n]?.reset) return;
   const ok = Steps[n].reset();
-  if (ok === false) { toast("請先等待當前運行完成"); return; }
+  if (ok === false) { toast("Wait for the current run to finish first"); return; }
   delete S.done[n];
   if (n === 9 || n === 10) Steps[12]?.rebuild?.();       // codon table follows the winner
   if (n === 9 || n === 10 || n === 12 || n === 13) Steps[14]?.fill?.();  // summary follows the data
   save(); applyLocks();
-  toast(`階段 ${LABELS[n]} 已重設——再試一次吧`);
+  toast(`Stage ${LABELS[n]} reset — have another go`);
 }
 document.addEventListener("click", e => {
   const b = e.target.closest(".next-btn");
@@ -1544,43 +1544,43 @@ document.addEventListener("input", e => { if (e.target.type === "range") setRang
    8 · hint dialog
    ============================================================ */
 const HINTS = {
-  1: "拖曳模型，直至看到兩個紅色殘基。逐一點擊。如果它們藏在結構後面，就繼續旋轉。",
-  2: "你不需要輸入任何東西。只需按「執行生成式 AI」，然後觀察日誌。",
-  3: "門檻是 70。將每行的數字與該門檻比較——行內其他內容都不會告訴你答案。",
-  4: "門檻是 0.80。清單上所有設計都已通過摺疊檢查，所以部分仍可能在這裡不合格。",
-  5: "即使一次脫靶命中也是問題。看看中間欄的數字。",
-  6: "這裡有兩重篩查。第一階段：即使一個強 MHC-I 結合肽也足以標記候選者。通過之後，第二階段以同樣思路檢查 MHC-II——那裡一個強結合肽也足夠。",
-  7: "先運行水中模擬——兩個候選者都會通過。真正的考驗是結合模擬：留意肽在 MD2 上時，哪條曲線保持在 2 Å 以下。",
-  8: "按「問問 UCB」獲取建議。部分位置帶來的改善比其他大——多試幾個，保留最好的三個。",
-  9: "密碼子選擇器上方的表格顯示每個密碼子的百分比。每個位置都選較高者——那就是大腸桿菌最常用的。",
-  10: "閱讀每個選項下的解釋。正確答案保護的是人；錯誤答案只是保住進度表或聽起來方便。",
+  1: "Drag the model until you can see the two red residues. Click each one. If they hide behind the structure, keep rotating.",
+  2: "You don't have to type anything. Just press Run generative AI and watch the log.",
+  3: "The cut-off is 70. Read the number on each row against that threshold — nothing else in the row tells you the answer.",
+  4: "The cut-off is 0.80. Everything in this list already passed the fold check, so some may still fail here.",
+  5: "Even one off-target hit is a problem. Look at the number in the middle column.",
+  6: "Two screens here. Phase one: even one strong MHC-I binder flags a candidate. Once that passes, phase two runs the same idea for MHC-II — one strong binder is enough there too.",
+  7: "Run the water simulation first — both candidates pass it. The real test is the bound simulation: watch which curve stays under 2 Å when the peptide sits on MD2.",
+  8: "Press 'Ask UCB' to get a suggestion. Some positions give a bigger improvement than others — try a few and keep the best three.",
+  9: "The table above the codon picker shows a percentage for each triplet. Pick the higher one for each position — that's what E. coli uses most often.",
+  10: "Read the explanation under each option. The right answer protects people; the wrong ones just protect the schedule or sound convenient.",
 };
 let hintStep = 1;
 document.addEventListener("click", e => {
   const b = e.target.closest(".hint-btn"); if (!b) return;
   hintStep = +b.dataset.hint;
-  $("#hintTitle").textContent = `提示 · ${LABELS[hintStep] ?? hintStep}`;
-  $("#hintText").textContent = HINTS[hintStep] || "請再試一次此步驟。";
+  $("#hintTitle").textContent = `Hint · ${LABELS[hintStep] ?? hintStep}`;
+  $("#hintText").textContent = HINTS[hintStep] || "Try the step again.";
   $("#helperCode").value = "";
-  $("#helperMsg").textContent = "供工作坊助手使用：解鎖並完成此階段。";
+  $("#helperMsg").textContent = "For workshop helpers: unlocks and completes this stage.";
   const d = $("#hintDlg");
   d.showModal ? d.showModal() : d.setAttribute("open", "");
 });
 $("#helperGo").addEventListener("click", () => {
   if ($("#helperCode").value.trim() !== HELPER_CODE) {
-    $("#helperMsg").textContent = "此代碼無效。請向工作坊負責人查詢。"; return;
+    $("#helperMsg").textContent = "That code didn't work. Check with the workshop leader."; return;
   }
   for (let n = 0; n <= hintStep; n++) if (!S.done[n]) { Steps[n]?.restore?.(); complete(n); }
   $("#hintDlg").close?.();
-  toast(`階段 ${LABELS[hintStep] ?? hintStep} 已由助手完成`);
+  toast(`Stage ${LABELS[hintStep] ?? hintStep} completed by a helper`);
 });
 
 let restartArmed = 0;
 $("#restart").addEventListener("click", () => {
   const b = $("#restart");
   if (Date.now() - restartArmed > 3000) {
-    restartArmed = Date.now(); b.textContent = "再按一次以清除";
-    setTimeout(() => b.textContent = "重新開始", 3000); return;
+    restartArmed = Date.now(); b.textContent = "Tap again to clear";
+    setTimeout(() => b.textContent = "Start over", 3000); return;
   }
   try { localStorage.removeItem(STORE_KEY); } catch (e) { /* ignore */ }
   scrollTo(0, 0); location.reload();
@@ -1655,17 +1655,17 @@ Steps[0] = {
       P.forEach(p => { ctx.fillStyle = C.acc; ctx.beginPath(); ctx.arc(p.x, p.y, 3.6 * p.s, 0, 6.283); ctx.fill(); });
       ctx.globalAlpha = 1;
       const caps = [
-        "MD2 共受體 · 正在尋找結合表面",
-        "MD2 共受體 · 已識別熱點 A82 / A85",
-        "MD2 共受體 · 設計結合肽正在到來",
-        "MD2 共受體 · 結合肽已鎖定熱點"
+        "MD2 co-receptor · searching for a binding surface",
+        "MD2 co-receptor · hotspot A82 / A85 identified",
+        "MD2 co-receptor · designed binder arriving",
+        "MD2 co-receptor · binder locked on the hotspots"
       ];
       const cap = $("#heroCap");
       const txt = caps[dockEase < .15 ? 0 : dockEase < .85 ? (Math.floor(t * .5) % 2 ? 1 : 2) : 3];
       if (cap.textContent !== txt) cap.textContent = txt;
     });
     $("#startBtn").addEventListener("click", () => {
-      badge("從頭設計結合肽"); badge("抗原表位");
+      badge("de novo binder"); badge("epitope");
       complete(0); goTo(1);
     });
   }
@@ -1689,16 +1689,16 @@ Steps[1] = (() => {
     if (pinned[res]) return;
     pinned[res] = true; setSeg(res, true);
     const left = Object.values(pinned).filter(Boolean).length;
-    if (left === 1) say("#s1say", "good", "<b>A82 已鎖定。</b>還有一個熱點。繼續旋轉——A85 就在同一條鏈上數個殘基之外。");
+    if (left === 1) say("#s1say", "good", "<b>A82 pinned.</b> One more hotspot to go. Keep rotating — A85 sits a few residues along the same strand.");
     else finish();
   }
   function finish() {
-    say("#s1say", "good", "<b>兩個熱點已鎖定。</b>你的設計片段已定——AI 現在會建構一個 15 個殘基的結合肽，剛好覆蓋這片區域。");
+    say("#s1say", "good", "<b>Both hotspots locked.</b> Your design contig is fixed — the AI will now build a 15-residue binder that covers exactly this patch.");
     $("#s1disc").hidden = false;
-    note("目標：MD2 殘基 A82 + A85");
-    note("熱點以外的一切都是支架——絕不突變它");
-    value("target", "目標殘基", "A82 / A85");
-    badge("抗原表位"); badge("熱點");
+    note("Target: MD2 residues A82 + A85");
+    note("Everything outside the hotspots is scaffold — never mutate it");
+    value("target", "Target residues", "A82 / A85");
+    badge("epitope"); badge("hotspot");
     complete(1);
   }
   function init() {
@@ -1713,7 +1713,7 @@ Steps[1] = (() => {
       ctx.globalAlpha = 0.7;
       ctx.font = `700 11px ${C.mono}`;
       ctx.fillStyle = C["ink-2"]; ctx.textAlign = "left";
-      ctx.fillText(pinned[82] && pinned[85] ? "目標已鎖定" : "目標表面", 16, h - 16);
+      ctx.fillText(pinned[82] && pinned[85] ? "TARGET LOCKED" : "TARGET SURFACE", 16, h - 16);
       ctx.globalAlpha = 1;
     });
     cv.addEventListener("pointerdown", e => {
@@ -1740,7 +1740,7 @@ Steps[1] = (() => {
         if (d < bestD) { bestD = d; best = hp; }
       }
       if (best) pin(best.res);
-      else say("#s1say", "info", "那裡沒有東西——那是支架。找出兩個帶脈動光環的紅色殘基。");
+      else say("#s1say", "info", "Nothing there — that's scaffold. Look for the two red residues with the pulsing rings.");
     };
     cv.addEventListener("pointerup", up);
     cv.addEventListener("pointercancel", () => { drag = null; });
@@ -1786,14 +1786,14 @@ function plddtStrip(seq, mean) {
 
 Steps[2] = (() => {
   const LOG = [
-    ["<b>RFD3</b> · 載入目標片段 A17–160", 260],
-    ["<b>RFD3</b> · 熱點 A82、A85 已鎖定為模體", 320],
-    ["<b>RFD3</b> · 採樣 15 殘基主鏈，50 步去噪", 1400],
-    ["<span class='ok'>✓</span> 已生成 10 條主鏈（長度 15）", 420],
-    ["<b>ProteinMPNN</b> · 為每個位置評分氨基酸身份", 1100],
-    ["<b>ProteinMPNN</b> · 溫度 0.1，每條主鏈 8 條序列", 900],
-    ["<span class='ok'>✓</span> 已選出 10 條獨特序列", 380],
-    ["<span class='ac'>→</span> 移交至篩選漏斗", 260]
+    ["<b>RFD3</b> · loading target contig A17–160", 260],
+    ["<b>RFD3</b> · hotspots A82, A85 locked as motif", 320],
+    ["<b>RFD3</b> · sampling 15-residue backbone, 50 denoising steps", 1400],
+    ["<span class='ok'>✓</span> 10 backbones generated (length 15)", 420],
+    ["<b>ProteinMPNN</b> · scoring amino-acid identities per position", 1100],
+    ["<b>ProteinMPNN</b> · temperature 0.1, 8 sequences per backbone", 900],
+    ["<span class='ok'>✓</span> 10 unique sequences selected", 380],
+    ["<span class='ac'>→</span> handing off to the filter funnel", 260]
   ];
   let running = false, done = false;
 
@@ -1803,7 +1803,7 @@ Steps[2] = (() => {
   }
   function resetUI() {
     done = false; $("#candWrap").hidden = true;
-    $("#genLog").innerHTML = `<span class="kbd-hint">等待你按下按鈕。</span>`;
+    $("#genLog").innerHTML = `<span class="kbd-hint">Waiting for you to press the button.</span>`;
     $("#genBar").style.width = "0%";
     $("#genReset").disabled = true;
     $("#genRun").disabled = false;
@@ -1836,21 +1836,21 @@ Steps[2] = (() => {
     if (!grid.innerHTML) {
       grid.innerHTML = CANDS.map((c, i) => `
         <div class="cand-card" style="animation-delay:${i * 55}ms">
-          <div class="hd"><span class="id">${c.id}</span><span class="kbd-hint num">15 個氨基酸</span></div>
+          <div class="hd"><span class="id">${c.id}</span><span class="kbd-hint num">15 aa</span></div>
           ${ribbonSVG(i * 977 + 31, C.acc)}
           <span class="seq">${c.seq}</span>
           ${plddtStrip(c.seq, c.plddt)}
         </div>`).join("");
     }
-    say("#s2say", "good", "10 個候選結合肽準備就緒。它們全部落在熱點上——但<i>貼合</i>的設計不等於<i>有用</i>的設計。是時候開始篩選了。");
+    say("#s2say", "good", "10 candidate binders ready. They all sit on the hotspot — but a design that <i>fits</i> is not the same as a design that <i>works</i>. Time for the funnel.");
     $("#s2disc").hidden = false;
-    note("AI 提出 10 個候選者；我們必須篩選它們");
-    value("cands", "已生成候選者", "10");
-    badge("從頭設計結合肽"); badge("ProteinMPNN");
+    note("AI proposes 10 candidates; we must filter them");
+    value("cands", "Candidates generated", "10");
+    badge("de novo binder"); badge("ProteinMPNN");
     complete(2);
   }
   function restore() {
-    $("#genLog").innerHTML = LOG.map(l => l[0]).join("\n") + `\n<span class="ok">✓</span> 已選出 10 條獨特序列`;
+    $("#genLog").innerHTML = LOG.map(l => l[0]).join("\n") + `\n<span class="ok">✓</span> 10 unique sequences selected`;
     $("#genBar").style.width = "100%";
     $("#genRun").disabled = true; $("#genReset").disabled = false;
     done = true; reveal();
@@ -1883,14 +1883,14 @@ function funnelStep(n, opts) {
           <span class="rid">${c.id}</span>
           <span class="rseq">${c.seq}</span>
           <span class="rmetric">${metricHTML(c)}</span>
-          <span class="rstate">保留</span>
+          <span class="rstate">keep</span>
         </button>`).join("");
       root.addEventListener("click", e => {
         const row = e.target.closest(".fr-row"); if (!row) return;
         const on = row.getAttribute("aria-pressed") !== "true";
         row.setAttribute("aria-pressed", on ? "true" : "false");
         const st = row.querySelector(".rstate");
-        st.textContent = on ? "淘汰" : "保留";
+        st.textContent = on ? "discard" : "keep";
         st.className = "rstate" + (on ? " no" : " ok");
       });
       $(`#f${n - 3}check`).addEventListener("click", check);
@@ -1905,7 +1905,7 @@ function funnelStep(n, opts) {
         row.setAttribute("aria-pressed", drop ? "true" : "false");
         row.classList.add(drop ? "drop" : "keep");
         const st = row.querySelector(".rstate");
-        st.textContent = drop ? "淘汰" : "保留";
+        st.textContent = drop ? "discard" : "keep";
         st.className = "rstate " + (drop ? "no" : "ok");
       });
       finish(true);
@@ -1919,7 +1919,7 @@ function funnelStep(n, opts) {
           <span class="rid">${c.id}</span>
           <span class="rseq">${c.seq}</span>
           <span class="rmetric">${metricHTML(c)}</span>
-          <span class="rstate">保留</span>
+          <span class="rstate">keep</span>
         </button>`).join("");
       $(`#f${n - 3}out`).innerHTML = "";
       const discEl = $(opts.disc);
@@ -1946,7 +1946,7 @@ function funnelStep(n, opts) {
     });
     if (wrong === 0) finish(false, correctDrop);
     else say(`#f${n - 3}out`, "warn",
-      `${wrong} 行仍不符合規則。規則是：<b>${opts.ruleText}</b>。請將每一行與該數值核對。`);
+      `${wrong} row${wrong > 1 ? "s" : ""} still don't match the rule. The rule is: <b>${opts.ruleText}</b>. Check every row against that number.`);
   }
 
   function finish(quiet) {
@@ -1960,7 +1960,7 @@ function funnelStep(n, opts) {
     const left = survivorsAfter(n);
     if (!quiet) {
       say(`#f${n - 3}out`, "good",
-        `正確。淘汰了 <b>${list.length - left.length}</b> 個，仍有 <b>${left.length}</b> 個留下。`);
+        `Correct. <b>${list.length - left.length}</b> discarded, <b>${left.length}</b> still standing.`);
     }
     const discEl = $(opts.disc);
     if (discEl) discEl.hidden = false;
@@ -1972,57 +1972,57 @@ function funnelStep(n, opts) {
 /* 2.1 */
 Steps[4] = (() => {
   const base = funnelStep(4, {
-    ruleText: "保留 pLDDT ≥ 70",
+    ruleText: "keep pLDDT ≥ 70",
     metric: c => `<span class="mbar"><i style="width:${c.plddt}%"></i></span><b>${fmt(c.plddt)}</b>`,
     disc: "#f1disc",
     onDone() {
-      note("淘汰所有 pLDDT < 70 的設計");
-      value("plddt", "摺疊門檻", "pLDDT ≥ 70");
-      badge("pLDDT"); badge("篩選漏斗");
+      note("Discard anything with pLDDT < 70");
+      value("plddt", "Fold cut-off", "pLDDT ≥ 70");
+      badge("pLDDT"); badge("funnel");
     }
   });
   return {
-    init() { base.init(); say("#f1say", "info", "點擊行項目即可標記為淘汰。綠色行是你保留的設計。"); },
+    init() { base.init(); say("#f1say", "info", "Click a row to mark it for discarding. Green rows are the ones you keep."); },
     restore() { base.restore(); },
-    reset() { base.resetRows(); say("#f1say", "info", "點擊行項目即可標記為淘汰。綠色行是你保留的設計。"); }
+    reset() { base.resetRows(); say("#f1say", "info", "Click a row to mark it for discarding. Green rows are the ones you keep."); }
   };
 })();
 
 /* 2.2 */
 Steps[5] = (() => {
   const base = funnelStep(5, {
-    ruleText: "保留 ipTM ≥ 0.80",
+    ruleText: "keep ipTM ≥ 0.80",
     metric: c => `<span class="mbar"><i style="width:${c.iptm * 100}%"></i></span><b>${c.iptm.toFixed(2)}</b>`,
     disc: "#f2disc",
     onDone() {
-      note("淘汰所有 ipTM < 0.80 的設計");
-      value("iptm", "介面門檻", "ipTM ≥ 0.80");
-      badge("ipTM"); badge("共同摺疊");
+      note("Discard anything with ipTM < 0.80");
+      value("iptm", "Interface cut-off", "ipTM ≥ 0.80");
+      badge("ipTM"); badge("co-fold");
     }
   });
   return {
-    init() { base.init(); say("#f2say", "info", "這 8 個全部能摺疊。現在我們要問它們能否<i>抓得住</i>。"); },
+    init() { base.init(); say("#f2say", "info", "These 8 all fold. Now we ask whether they <i>hold on</i>."); },
     restore() { base.restore(); },
-    reset() { base.resetRows(); say("#f2say", "info", "這 8 個全部能摺疊。現在我們要問它們能否<i>抓得住</i>。"); }
+    reset() { base.resetRows(); say("#f2say", "info", "These 8 all fold. Now we ask whether they <i>hold on</i>."); }
   };
 })();
 
 /* 2.3 */
 Steps[6] = (() => {
   const base = funnelStep(6, {
-    ruleText: "保留 0 個脫靶命中的候選者",
-    metric: c => `<span class="mbar"><i style="width:${clamp(c.off / 3 * 100, 4, 100)}%"></i></span><b>${c.off} 個命中</b>`,
+    ruleText: "keep candidates with 0 off-target hits",
+    metric: c => `<span class="mbar"><i style="width:${clamp(c.off / 3 * 100, 4, 100)}%"></i></span><b>${c.off} hit${c.off === 1 ? "" : "s"}</b>`,
     disc: "#f3disc",
     onDone() {
-      note("淘汰任何與人類蛋白質匹配的候選者");
-      value("off", "脫靶門檻", "0 個命中");
-      badge("特異性"); badge("MMseqs2");
+      note("Discard any candidate that matches a human protein");
+      value("off", "Off-target cut-off", "0 hits");
+      badge("specificity"); badge("MMseqs2");
     }
   });
   return {
-    init() { base.init(); say("#f3say", "info", "MMseqs2 把每條序列與每個人類蛋白質比較。一次命中已足以構成危險。"); },
+    init() { base.init(); say("#f3say", "info", "MMseqs2 compares each sequence to every human protein. One hit is enough to be dangerous."); },
     restore() { base.restore(); },
-    reset() { base.resetRows(); say("#f3say", "info", "MMseqs2 把每條序列與每個人類蛋白質比較。一次命中已足以構成危險。"); }
+    reset() { base.resetRows(); say("#f3say", "info", "MMseqs2 compares each sequence to every human protein. One hit is enough to be dangerous."); }
   };
 })();
 
@@ -2032,8 +2032,8 @@ Steps[7] = (() => {
   const list2 = () => survivorsAfter(7);   // 3 enter the MHC-II screen
   const pass1 = c => c.mhc1 === 0;
   const pass2 = c => c.mhc2 === 0;
-  const m1 = c => `<span class="mbar"><i style="width:${clamp(c.mhc1 / 3 * 100, 4, 100)}%"></i></span><b>${c.mhc1} 個結合肽</b>`;
-  const m2 = c => `<span class="mbar"><i style="width:${clamp(c.mhc2 / 3 * 100, 4, 100)}%"></i></span><b>${c.mhc2} 個結合肽</b>`;
+  const m1 = c => `<span class="mbar"><i style="width:${clamp(c.mhc1 / 3 * 100, 4, 100)}%"></i></span><b>${c.mhc1} binder${c.mhc1 === 1 ? "" : "s"}</b>`;
+  const m2 = c => `<span class="mbar"><i style="width:${clamp(c.mhc2 / 3 * 100, 4, 100)}%"></i></span><b>${c.mhc2} binder${c.mhc2 === 1 ? "" : "s"}</b>`;
 
   function renderRows(root, list, metric) {
     root.innerHTML = list.map(c => `
@@ -2041,7 +2041,7 @@ Steps[7] = (() => {
         <span class="rid">${c.id}</span>
         <span class="rseq">${c.seq}</span>
         <span class="rmetric">${metric(c)}</span>
-        <span class="rstate">保留</span>
+        <span class="rstate">keep</span>
       </button>`).join("");
   }
   function wireToggle(root) {
@@ -2078,7 +2078,7 @@ Steps[7] = (() => {
     });
     if (wrong === 0) onPass();
     else say(out, "warn",
-      `${wrong} 行仍不符合規則。規則是：<b>${ruleText}</b>。請將每一行與該數值核對。`);
+      `${wrong} row${wrong > 1 ? "s" : ""} still don't match the rule. The rule is: <b>${ruleText}</b>. Check every row against that number.`);
   }
 
   function init() {
@@ -2087,15 +2087,15 @@ Steps[7] = (() => {
     renderRows($("#f5"), list2(), m2);
     wireToggle($("#f5"));
     $("#f4check").addEventListener("click", () =>
-      checkPhase($("#f4"), "#f4out", list1(), pass1, "淘汰任何有 ≥ 1 個強 MHC-I 結合肽的候選者", phase1Pass));
+      checkPhase($("#f4"), "#f4out", list1(), pass1, "discard any candidate with ≥ 1 strong MHC-I binder", phase1Pass));
     $("#f5check").addEventListener("click", () =>
-      checkPhase($("#f5"), "#f5out", list2(), pass2, "淘汰任何有 ≥ 1 個強 MHC-II 結合肽的候選者", phase2Pass));
+      checkPhase($("#f5"), "#f5out", list2(), pass2, "discard any candidate with ≥ 1 strong MHC-II binder", phase2Pass));
   }
 
   function phase1Pass() {
     markRows($("#f4"), list1(), pass1);
-    say("#f4out", "good", `正確。淘汰了 <b>2</b> 個，仍有 <b>3</b> 個留下。但 MHCflurry 只覆蓋一條展示途徑——MHC-II 途徑需要自己的引擎。`);
-    say("#f5say", "info", "這 3 個通過了 MHC-I 篩查。現在由 MHCnuggets 檢查另一條途徑：MHC-II。");
+    say("#f4out", "good", `Correct. <b>2</b> discarded, <b>3</b> still standing. But MHCflurry only covers one display route — the MHC-II route needs its own engine.`);
+    say("#f5say", "info", "These 3 cleared the MHC-I screen. Now MHCnuggets checks the other route: MHC-II.");
     const p2 = $("#phase2");
     p2.hidden = false;
     setTimeout(() => p2.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" }), REDUCED ? 0 : 350);
@@ -2103,11 +2103,11 @@ Steps[7] = (() => {
 
   function phase2Pass() {
     markRows($("#f5"), list2(), pass2);
-    say("#f5out", "good", `正確。淘汰了 <b>1</b> 個，仍有 <b>2</b> 個留下。兩條免疫途徑都暢通。`);
+    say("#f5out", "good", `Correct. <b>1</b> discarded, <b>2</b> still standing. Both immune routes are clear.`);
     $("#f4disc").hidden = false;
-    note("淘汰任何免疫系統可能認出的設計");
-    value("mhc", "免疫門檻", "0 個強 MHC-I · 0 個強 MHC-II");
-    badge("具免疫原性"); badge("MHCflurry"); badge("MHCnuggets");
+    note("Discard anything the immune system might recognise");
+    value("mhc", "Immune cut-offs", "0 strong MHC-I · 0 strong MHC-II");
+    badge("immunogenic"); badge("MHCflurry"); badge("MHCnuggets");
     complete(7);
   }
 
@@ -2117,12 +2117,12 @@ Steps[7] = (() => {
     renderRows($("#f5"), list2(), m2);
     markRows($("#f5"), list2(), pass2);
     $("#phase2").hidden = false;
-    say("#f4out", "good", `MHC-I 篩查：淘汰了 <b>2</b> 個，仍有 <b>3</b> 個留下。`);
-    say("#f5out", "good", `MHC-II 篩查：淘汰了 <b>1</b> 個，仍有 <b>2</b> 個留下。`);
+    say("#f4out", "good", `MHC-I screen: <b>2</b> discarded, <b>3</b> still standing.`);
+    say("#f5out", "good", `MHC-II screen: <b>1</b> discarded, <b>2</b> still standing.`);
     $("#f4disc").hidden = false;
-    note("淘汰任何免疫系統可能認出的設計");
-    value("mhc", "免疫門檻", "0 個強 MHC-I · 0 個強 MHC-II");
-    badge("具免疫原性"); badge("MHCflurry"); badge("MHCnuggets");
+    note("Discard anything the immune system might recognise");
+    value("mhc", "Immune cut-offs", "0 strong MHC-I · 0 strong MHC-II");
+    badge("immunogenic"); badge("MHCflurry"); badge("MHCnuggets");
     complete(7);
   }
   function reset() {
@@ -2176,17 +2176,17 @@ Steps[9] = (() => {
       const a = axes(ctx, w, h, {
         xMax: NS, yMax,
         xTicks: [0, 2, 4, 6, 8, 10], yTicks,
-        xLabel: "納秒", yLabel: "RMSD (Å)", pad: { b: 34, l: 48 }
+        xLabel: "nanoseconds", yLabel: "RMSD (Å)", pad: { b: 34, l: 48 }
       });
       ctx.setLineDash([6, 4]); ctx.strokeStyle = C.warn; ctx.lineWidth = 1.6;
       ctx.beginPath(); ctx.moveTo(a.X(0), a.Y(2)); ctx.lineTo(a.X(NS), a.Y(2)); ctx.stroke();
       ctx.setLineDash([]);
       ctx.fillStyle = C.warn; ctx.font = `700 11px ${C.mono}`; ctx.textAlign = "left";
-      ctx.fillText("2 Å · 穩定界限", a.X(0.15), a.Y(2) - 7);
+      ctx.fillText("2 Å · stable limit", a.X(0.15), a.Y(2) - 7);
 
       if (prog() <= 0) {
         ctx.fillStyle = C["ink-2"]; ctx.textAlign = "center"; ctx.font = `500 13px ${C.mono}`;
-        ctx.fillText("按「運行」開始模擬", w / 2, h / 2);
+        ctx.fillText("Press Run to start the simulation", w / 2, h / 2);
         return;
       }
       const pa = [], pb = [];
@@ -2218,11 +2218,11 @@ Steps[9] = (() => {
       if (b.dataset.v === "MD2B-10") {
         b.classList.add("good");
         picked = "MD2B-10";
-        say("#mdSay", "good", "正確。<b>MD2B-10</b> 在水中穩定，<b>而且</b>在 MD2 上全程保持在 1.4 Å——它既保持摺疊，也保持抓力。MD2B-01 在結合之前看似沒問題，結合後就鬆脫了。");
+        say("#mdSay", "good", "Correct. <b>MD2B-10</b> was stable in water <b>and</b> stays at 1.4 Å on MD2 for the whole trajectory — it holds its fold and holds its grip. MD2B-01 looked fine until it bound, then ripped loose.");
         finish();
       } else {
         b.classList.add("meh");
-        say("#mdSay", "warn", "再看看結合模擬中的紅色曲線。它維持了約 3 ns，然後越過 2 Å 線並持續攀升——在 MD2 上，那個結合肽會解體。單靠水中穩定是不夠的。");
+        say("#mdSay", "warn", "Look again at the red curve in the bound simulation. It holds for about 3 ns, then crosses the 2 Å line and keeps climbing — on MD2, that binder comes apart. Water stability alone is not enough.");
       }
     });
   }
@@ -2266,10 +2266,10 @@ Steps[9] = (() => {
     $("#mdRun1").disabled = true;
     animate(p => p1 = p, "#mdClock1", "#mdRmsdA1", "#mdRmsdB1", wA, wB, () => {
       busy1 = false; ran1 = true;
-      $("#mdVerdA1").innerHTML = "<b style='color:var(--ok)'>穩定。</b>RMSD 在約 1.2 Å 平穩——肽在水中保持摺疊。";
-      $("#mdVerdB1").innerHTML = "<b style='color:var(--ok)'>穩定。</b>RMSD 在約 1.1 Å 平穩——同樣是良好的摺疊。";
+      $("#mdVerdA1").innerHTML = "<b style='color:var(--ok)'>Stable.</b> RMSD settles near 1.2 Å — the peptide holds its fold in water.";
+      $("#mdVerdB1").innerHTML = "<b style='color:var(--ok)'>Stable.</b> RMSD settles near 1.1 Å — also a well-behaved fold.";
       $("#mdGate").disabled = false;
-      say("#mdSay", "info", "兩個候選者都撐過了純水。但水不是身體——下一個測試是結合複合物。");
+      say("#mdSay", "info", "Both candidates survive plain water. But water is not the body — the next test is the bound complex.");
     });
   }
 
@@ -2279,10 +2279,10 @@ Steps[9] = (() => {
     $("#mdRun2").disabled = true;
     animate(p => p2 = p, "#mdClock2", "#mdRmsdA2", "#mdRmsdB2", bA, bB, () => {
       busy2 = false; ran2 = true;
-      $("#mdVerdA2").innerHTML = "<b style='color:var(--hot)'>結合後不穩定。</b>約 3 ns 內尚可，然後 RMSD 在約 4 ns 衝破 2 Å 並持續攀升。在 MD2 上，這個結合肽會解體。";
-      $("#mdVerdB2").innerHTML = "<b style='color:var(--ok)'>穩定。</b>RMSD 停在 1.4 Å，整個 10 ns 保持平穩。複合物保持穩定。";
+      $("#mdVerdA2").innerHTML = "<b style='color:var(--hot)'>Unstable when bound.</b> Fine for ~3 ns, then RMSD rips past 2 Å at about 4 ns and keeps climbing. On MD2, this binder comes apart.";
+      $("#mdVerdB2").innerHTML = "<b style='color:var(--ok)'>Stable.</b> RMSD settles at 1.4 Å and stays flat for the whole 10 ns. The complex holds.";
       $("#mdAsk").hidden = false;
-      say("#mdSay", "info", "同一條肽，兩齣電影。其中一個只在結合後瓦解。挑選你會繼續推進的候選者。");
+      say("#mdSay", "info", "Same peptide, two movies. One falls apart only when bound. Pick the candidate you would take forward.");
     });
   }
 
@@ -2290,11 +2290,11 @@ Steps[9] = (() => {
     $("#mddisc").hidden = false;
     S.data.winner = { id: "MD2B-10", seq: "MTVQELLRELAGLKT", plddt: 94.1, iptm: 0.91 };
     save();
-    note("水中穩定不等於結合時穩定");
-    value("winner", "領先候選者", "MD2B-10");
-    value("rmsdW", "水中 10 ns 後的 RMSD", "≈ 1.2 Å（兩個候選者）");
-    value("rmsd", "結合 MD2 10 ns 後的 RMSD", "1.4 Å");
-    badge("分子動力學"); badge("RMSD"); badge("GROMACS"); badge("VMD");
+    note("Stable in water is not the same as stable when bound");
+    value("winner", "Lead candidate", "MD2B-10");
+    value("rmsdW", "RMSD after 10 ns in water", "≈ 1.2 Å (both candidates)");
+    value("rmsd", "RMSD after 10 ns bound to MD2", "1.4 Å");
+    badge("molecular dynamics"); badge("RMSD"); badge("GROMACS"); badge("VMD");
     complete(9);
   }
 
@@ -2304,8 +2304,8 @@ Steps[9] = (() => {
     $("#mdClock1").textContent = "10.0 ns";
     $("#mdRmsdA1").textContent = wA(NS).toFixed(2) + " Å";
     $("#mdRmsdB1").textContent = wB(NS).toFixed(2) + " Å";
-    $("#mdVerdA1").innerHTML = "<b style='color:var(--ok)'>穩定。</b>在水中於約 1.2 Å 平穩。";
-    $("#mdVerdB1").innerHTML = "<b style='color:var(--ok)'>穩定。</b>在水中於約 1.1 Å 平穩。";
+    $("#mdVerdA1").innerHTML = "<b style='color:var(--ok)'>Stable.</b> Settles near 1.2 Å in water.";
+    $("#mdVerdB1").innerHTML = "<b style='color:var(--ok)'>Stable.</b> Settles near 1.1 Å in water.";
     $("#mdGate").disabled = true;
     $("#mdPhase2").hidden = false;
     initPhase2();
@@ -2313,8 +2313,8 @@ Steps[9] = (() => {
     $("#mdClock2").textContent = "10.0 ns";
     $("#mdRmsdA2").textContent = bA(NS).toFixed(2) + " Å";
     $("#mdRmsdB2").textContent = bB(NS).toFixed(2) + " Å";
-    $("#mdVerdA2").innerHTML = "<b style='color:var(--hot)'>結合後不穩定。</b>約 4 ns 衝破 2 Å。";
-    $("#mdVerdB2").innerHTML = "<b style='color:var(--ok)'>穩定。</b>整個 10 ns 停在 1.4 Å。";
+    $("#mdVerdA2").innerHTML = "<b style='color:var(--hot)'>Unstable when bound.</b> Rips past 2 Å at about 4 ns.";
+    $("#mdVerdB2").innerHTML = "<b style='color:var(--ok)'>Stable.</b> Settles at 1.4 Å for the whole 10 ns.";
     $("#mdAsk").hidden = false;
     const b = $('#mdPick [data-v="MD2B-10"]');
     press($("#mdPick"), b); b.classList.add("good");
@@ -2326,13 +2326,13 @@ Steps[9] = (() => {
     $("#mdRun1").disabled = false;
     $("#mdClock1").textContent = "0.0 ns";
     $("#mdRmsdA1").textContent = "—"; $("#mdRmsdB1").textContent = "—";
-    $("#mdVerdA1").textContent = "尚未測試。"; $("#mdVerdB1").textContent = "尚未測試。";
+    $("#mdVerdA1").textContent = "Not tested yet."; $("#mdVerdB1").textContent = "Not tested yet.";
     $("#mdGate").disabled = true;
     $("#mdPhase2").hidden = true;
     $("#mdRun2").disabled = false;
     $("#mdClock2").textContent = "0.0 ns";
     $("#mdRmsdA2").textContent = "—"; $("#mdRmsdB2").textContent = "—";
-    $("#mdVerdA2").textContent = "尚未測試。"; $("#mdVerdB2").textContent = "尚未測試。";
+    $("#mdVerdA2").textContent = "Not tested yet."; $("#mdVerdB2").textContent = "Not tested yet.";
     $("#mdAsk").hidden = true;
     $$("#mdPick .choice").forEach(b => { b.setAttribute("aria-pressed", "false"); b.classList.remove("good", "meh"); });
     $("#mdSay").innerHTML = "";
@@ -2379,15 +2379,15 @@ Steps[10] = (() => {
     $("#ucbBtn").addEventListener("click", ucbSuggest);
     $("#mutUndo").addEventListener("click", () => {
       const last = history.pop();
-      if (!last) { say("#evoLog", "info", "沒有可撤銷的操作。"); return; }
+      if (!last) { say("#evoLog", "info", "Nothing to undo."); return; }
       delete muts[last.idx];
       render();
-      say("#evoLog", "info", `已將位置 ${last.idx + 1} 還原為 ${last.from}。`);
+      say("#evoLog", "info", `Reverted position ${last.idx + 1} back to ${last.from}.`);
     });
     $("#mutReset").addEventListener("click", () => {
       muts = {}; history = []; visits = {}; bestSeen = {}; totalTries = 0;
       render();
-      say("#evoLog", "info", "序列已重設為原始設計。");
+      say("#evoLog", "info", "Sequence reset to the original design.");
     });
   }
 
@@ -2403,7 +2403,7 @@ Steps[10] = (() => {
       const locked = LOCKED.has(i);
       const mutated = muts[i] !== undefined;
       return `<button class="aa ${locked ? "locked" : ""} ${mutated ? "mut" : ""}" data-i="${i}"
-        ${locked ? 'aria-disabled="true"' : ""} title="${locked ? "接觸熱點——受保護" : "點擊突變"}">
+        ${locked ? 'aria-disabled="true"' : ""} title="${locked ? "Contacts the hotspot — protected" : "Click to mutate"}">
         ${locked ? '<span class="lockmark" aria-hidden="true">🔒</span>' : ""}
         <span class="r">${ch}</span><span class="p">${i + 1}</span>
       </button>`;
@@ -2413,7 +2413,7 @@ Steps[10] = (() => {
       btn.addEventListener("click", () => {
         const i = +btn.dataset.i;
         if (LOCKED.has(i)) {
-          say("#evoLog", "warn", `位置 ${i + 1} 已<b>鎖定</b>。這個殘基直接緊貼 A82 或 A85——突變它，結合肽可能就會抓不住。保護關鍵殘基是設計上的約束，而非建議。`);
+          say("#evoLog", "warn", `Position ${i + 1} is <b>locked</b>. This residue sits directly against A82 or A85 — mutate it and the binder may simply stop gripping. Protecting key residues is a design constraint, not a suggestion.`);
           return;
         }
         openMenu(i);
@@ -2428,8 +2428,8 @@ Steps[10] = (() => {
     $("#mutPanel").innerHTML = `
       <div class="panel" style="display:grid;gap:10px">
         <div class="row" style="justify-content:space-between">
-          <span class="label">位置 ${i + 1} · 目前為 ${cur}</span>
-          <button class="ghost" id="closeMut" style="padding:4px 10px;font-size:13px">關閉</button>
+          <span class="label">Position ${i + 1} · currently ${cur}</span>
+          <button class="ghost" id="closeMut" style="padding:4px 10px;font-size:13px">Close</button>
         </div>
         <div class="mut-menu">
           ${opts.filter(o => o[0] !== cur).map(o => `
@@ -2438,7 +2438,7 @@ Steps[10] = (() => {
               <span class="d ${o[1] < 0 ? "up" : "dn"}">${o[1] < 0 ? "▼" : "▲"} ${Math.abs(o[1]).toFixed(2)}</span>
             </button>`).join("")}
         </div>
-        <p class="kbd-hint">預測的結合自由能變化。負值代表結合更強。</p>
+        <p class="kbd-hint">Predicted change in binding free energy. Negative is stronger.</p>
       </div>`;
     $("#closeMut").addEventListener("click", () => { $("#mutPanel").innerHTML = ""; });
     $("#mutPanel").querySelectorAll(".mut-opt").forEach(b => {
@@ -2452,7 +2452,7 @@ Steps[10] = (() => {
         $("#mutPanel").innerHTML = "";
         render();
         say("#evoLog", delta < 0 ? "good" : "warn",
-          `位置 ${i + 1}：<b>${cur} → ${aa}</b>。結合自由能${delta < 0 ? "改善了" : "變差了"} ${Math.abs(delta).toFixed(2)} kcal/mol。現在為 <b>−${(-dgNow()).toFixed(1)}</b> kcal/mol。`);
+          `Position ${i + 1}: <b>${cur} → ${aa}</b>. Binding free energy ${delta < 0 ? "improved" : "got worse"} by ${Math.abs(delta).toFixed(2)} kcal/mol. Now <b>−${(-dgNow()).toFixed(1)}</b> kcal/mol.`);
       });
     });
   }
@@ -2471,9 +2471,9 @@ Steps[10] = (() => {
     $(`#seqStrip .aa[data-i="${best.i}"]`)?.classList.add("suggest");
     $("#ucbPanel").hidden = false;
     $("#ucbTable").innerHTML = scored.slice(0, 5).map(s =>
-      `位置 ${String(s.i + 1).padStart(2)} · 已試 ${s.n} 次 · 最佳 μ ${s.mu.toFixed(2)} · 獎勵 ${s.bonus.toFixed(2)} · 分數 ${s.score.toFixed(2)}`
+      `pos ${String(s.i + 1).padStart(2)} · tried ${s.n}× · best μ ${s.mu.toFixed(2)} · bonus ${s.bonus.toFixed(2)} · score ${s.score.toFixed(2)}`
     ).join("<br>");
-    say("#evoLog", "info", `UCB 建議<b>位置 ${best.i + 1}</b>。它的分數最低——即是說它看起來有潛力（μ），或者我們試得還不夠（獎勵）。點擊它查看選項。`);
+    say("#evoLog", "info", `UCB suggests <b>position ${best.i + 1}</b>. It has the lowest score — meaning it either looks promising (μ) or we haven't tried it enough (bonus). Click it to see the options.`);
     badge("UCB");
   }
 
@@ -2485,11 +2485,11 @@ Steps[10] = (() => {
     S.data.winner.dg = dg;
     S.data.winner.muts = { ...muts };
     save();
-    note("每個突變都由模型評分，而非移液器");
-    value("dg", "結合能 ΔG", `−${(-dg).toFixed(1)} kcal/mol`);
-    badge("結合自由能"); badge("貝葉斯優化");
+    note("Every mutation was scored by a model, not a pipette");
+    value("dg", "Binding energy ΔG", `−${(-dg).toFixed(1)} kcal/mol`);
+    badge("binding free energy"); badge("Bayesian optimisation");
     if (!S.done[10]) {
-      say("#evoLog", "good", `<b>ΔG = −${(-dg).toFixed(1)} kcal/mol。</b>已越過 −8.0 的目標。你的肽現在結合得夠強，值得合成。`);
+      say("#evoLog", "good", `<b>ΔG = −${(-dg).toFixed(1)} kcal/mol.</b> That's past the −8.0 target. Your peptide now binds strongly enough to be worth synthesising.`);
       complete(10);
     }
   }
@@ -2554,9 +2554,9 @@ const CODON_DATA = {
   Y: [["TAT", 57], ["TAC", 43]]
 };
 const AA_FULL = {
-  A: "丙氨酸", C: "半胱氨酸", D: "天冬氨酸", E: "穀氨酸", F: "苯丙氨酸", G: "甘氨酸", H: "組氨酸", I: "異亮氨酸",
-  K: "賴氨酸", L: "亮氨酸", M: "甲硫氨酸", N: "天冬酰胺", P: "脯氨酸", Q: "穀氨酰胺", R: "精氨酸", S: "絲氨酸",
-  T: "蘇氨酸", V: "纈氨酸", W: "色氨酸", Y: "酪氨酸"
+  A: "Ala", C: "Cys", D: "Asp", E: "Glu", F: "Phe", G: "Gly", H: "His", I: "Ile",
+  K: "Lys", L: "Leu", M: "Met", N: "Asn", P: "Pro", Q: "Gln", R: "Arg", S: "Ser",
+  T: "Thr", V: "Val", W: "Trp", Y: "Tyr"
 };
 
 Steps[12] = (() => {
@@ -2581,7 +2581,7 @@ Steps[12] = (() => {
       rows.push(`<tr class="pref"><td>${AA_FULL[ch] || ch}</td><td>${ch}</td><td>${p[0]}</td><td>${p[1]}%</td></tr>`);
       if (!isSame) rows.push(`<tr><td></td><td></td><td>${a[0]}</td><td>${a[1]}%</td></tr>`);
     }
-    return `<thead><tr><th>氨基酸</th><th>字母</th><th>密碼子</th><th>大腸桿菌中的使用率</th></tr></thead><tbody>${rows.join("")}</tbody>`;
+    return `<thead><tr><th>Amino acid</th><th>Letter</th><th>Codon</th><th>Usage in E. coli</th></tr></thead><tbody>${rows.join("")}</tbody>`;
   }
 
   function buildDOM() {
@@ -2606,7 +2606,7 @@ Steps[12] = (() => {
             const [codon, pct] = o;
             return `<button class="codon" data-c="${codon}" data-pct="${pct}">${codon}<span class="pct">${pct}%</span></button>`;
           }).join("")}
-          <span class="kbd-hint" style="align-self:center">位置 ${i + 1}</span>
+          <span class="kbd-hint" style="align-self:center">position ${i + 1}</span>
         </div>
       </div>`;
     }).join("");
@@ -2628,11 +2628,11 @@ Steps[12] = (() => {
         row.querySelectorAll(".codon").forEach(x => { if (x !== b) x.disabled = true; });
         chosen[row.dataset.i] = b.dataset.c;
         solvedCount++;
-        say("#codonSay", "good", `正確——<b>${b.dataset.c}</b> 在大腸桿菌中 <b>${b.dataset.pct}%</b> 的時間都會使用。核糖體幾乎瞬間就能找到對應的 tRNA。（${solvedCount}/${POS.length}）`);
+        say("#codonSay", "good", `Correct — <b>${b.dataset.c}</b> is used <b>${b.dataset.pct}%</b> of the time in <i>E. coli</i>. The ribosome finds tRNA for it almost instantly. (${solvedCount}/${POS.length})`);
         if (solvedCount === POS.length) finish();
       } else {
         b.classList.add("no");
-        say("#codonSay", "warn", `<b>${b.dataset.c}</b> 同樣編碼該氨基酸——但只有 <b>${b.dataset.pct}%</b> 的使用率，相比之下另一邊的 <b>${row.dataset.pref}</b> 更高。核糖體會因等待罕見的 tRNA 而停頓。請選擇百分比較高的那個。`);
+        say("#codonSay", "warn", `<b>${b.dataset.c}</b> also codes for that amino acid — but it is only used <b>${b.dataset.pct}%</b> of the time, versus <b>${row.dataset.pref}</b> on the other side. The ribosome would pause waiting for the rare tRNA. Try the higher-percentage one.`);
       }
     });
   }
@@ -2651,9 +2651,9 @@ Steps[12] = (() => {
     const gene = showGene();
     S.data.gene = gene.replace(/ /g, "");
     save();
-    note("同一蛋白質，可以有許多基因——選細胞讀得最快的那個");
-    value("gene", "基因長度", gene.replace(/ /g, "").length + " bp");
-    badge("密碼子優化");
+    note("Same protein, many possible genes — pick the one the cell reads fastest");
+    value("gene", "Gene length", gene.replace(/ /g, "").length + " bp");
+    badge("codon optimisation");
     complete(12);
   }
 
@@ -2696,40 +2696,40 @@ Steps[12] = (() => {
    ============================================================ */
 const QUIZ = [
   {
-    q: "你設計的基因會放進一株無法在豐富培養基以外存活、已失能的實驗室<i>大腸桿菌</i>菌株。這項工作需要甚麼生物安全等級？",
+    q: "Your designed gene goes into a disabled lab strain of <i>E. coli</i> that cannot survive outside a rich medium. What biosafety level does this work need?",
     opts: [
-      { t: "BSL-1", ok: true,  tag: "標準實驗室衛生",
-        ex: "一株非致病、已失能的實驗室菌株，以標準衛生操作處理，無需特殊防護。" },
-      { t: "BSL-3", ok: false, tag: "呼吸器＋密封房間",
-        ex: "該等級適用於<i>結核分枝桿菌</i>一類的病原體。我們的菌株無法感染任何人——這是過度防護和不必要的成本。" },
-      { t: "BSL-4", ok: false, tag: "全套正壓防護衣",
-        ex: "只預留給伊波拉一類的病毒。這裡沒有任何東西具大流行潛力或抗藥途徑。" }
+      { t: "BSL-1", ok: true,  tag: "standard lab hygiene",
+        ex: "A non-pathogenic, disabled lab strain handled with standard hygiene and no special containment." },
+      { t: "BSL-3", ok: false, tag: "respirator + sealed room",
+        ex: "That level is for pathogens like <i>M. tuberculosis</i>. Our strain cannot infect anyone — this would be overkill and unnecessary cost." },
+      { t: "BSL-4", ok: false, tag: "full positive-pressure suit",
+        ex: "Reserved for viruses like Ebola. Nothing here has pandemic potential or a treatment-resistant pathway." }
     ],
-    why: "一株非致病、已失能的實驗室菌株，以標準衛生操作處理，就是 BSL-1。這裡沒有任何危險——但為求「安全」而聲稱需要 BSL-4，只會浪費真正病原體需要的防護設施。"
+    why: "A non-pathogenic, disabled lab strain handled with standard hygiene is BSL-1. Nothing here is dangerous — but saying BSL-4 'to be safe' wastes containment facilities that are needed for real pathogens."
   },
   {
-    q: "我們在實驗室如何驗證肽不會傷害病人的細胞？",
+    q: "How did we check, in the lab, that the peptide won't harm a patient's cells?",
     opts: [
-      { t: "用電腦模擬肽接觸細胞膜", ok: false, tag: "僅電腦模擬",
-        ex: "對接和 MD 模擬可以推測肽與細胞膜的相互作用——但它們建模的是對細胞的想像，而非細胞本身。只有活細胞實驗才能量度真正的毒性。" },
-      { t: "在互聯網上搜尋相似蛋白質", ok: false, tag: "不系統",
-        ex: "搜尋引擎不是經整理的數據庫。它可能遺漏已知毒素的同源物，也無法接受審計——安全結論必須可重現。" },
-      { t: "在 THP-1 細胞上進行 CCK-8 細胞毒性測試", ok: true, tag: "細胞毒性測試",
-        ex: "TAP2 與 THP-1 細胞共同培養 24 小時，然後與未處理（0 mg/mL）對照組比較細胞存活率。存活率沒有顯著下降，代表肽沒有毒性。" }
+      { t: "A computer simulation of the peptide touching the cell membrane", ok: false, tag: "in-silico only",
+        ex: "Docking and MD simulations can suggest how a peptide might interact with a membrane — but they model an idea of the cell, not the cell itself. Only a living-cell experiment can measure actual toxicity." },
+      { t: "The internet, for similar-looking proteins", ok: false, tag: "not systematic",
+        ex: "A search engine is not a curated database. It can miss homologues of a known toxin and it cannot be audited — safety conclusions must be reproducible." },
+      { t: "A CCK-8 cytotoxicity test on THP-1 cells", ok: true, tag: "cell toxicity test",
+        ex: "TAP2 was incubated with THP-1 cells for 24 hours, then cell survival was measured against an untreated (0 mg/mL) control. No significant drop in viability means the peptide is not toxic." }
     ],
-    why: "我們進行了 CCK-8 細胞毒性測試：THP-1 細胞與 TAP2 共同培養 24 小時，其存活率與未處理對照組比較，沒有顯著差異——肽對傷口中會遇到的細胞無毒。模擬只能提示風險，濕實驗室測試才能排除風險。"
+    why: "We ran a CCK-8 cytotoxicity test: THP-1 cells were incubated with TAP2 for 24 hours and their survival compared with an untreated control. There was no significant difference — the peptide is not toxic to the cells it would meet in a wound. Simulations can suggest a risk, but only a wet-lab test can rule one out."
   },
   {
-    q: "你的肽將用於傷口敷料。哪項結果會令你停止推進？",
+    q: "Your peptide is meant for a wound dressing. Which result would stop you from proceeding?",
     opts: [
-      { t: "強烈的 MHC-I 結合肽預測（由 MHCflurry 標記）", ok: true, tag: "免疫警報",
-        ex: "強 MHC-I 命中代表 T 細胞很可能把肽視為外來物。用在傷口敷料上，可能引發炎症而非紓緩——與我們的目標相反。" },
-      { t: "pLDDT 為 94", ok: false, tag: "摺疊極佳",
-        ex: "94 是非常高的信心。模型是在說預測結構幾乎肯定正確。這正是你希望看到的。" },
-      { t: "ΔG 為 −8.4 kcal/mol", ok: false, tag: "結合力強",
-        ex: "−8.4 已越過 −8.0 目標。這正是你一直突變追求的強抓力。是好跡象，不是危險訊號。" }
+      { t: "A strong predicted MHC-I binder (flagged by MHCflurry)", ok: true, tag: "immune alarm",
+        ex: "A strong MHC-I hit means T-cells will likely recognise the peptide as foreign. On a wound dressing, that could trigger inflammation instead of healing it — the opposite of what we want." },
+      { t: "A pLDDT of 94", ok: false, tag: "excellent fold",
+        ex: "94 is very high confidence. The model is saying the predicted structure is almost certainly correct. This is what you hope to see." },
+      { t: "A ΔG of −8.4 kcal/mol", ok: false, tag: "strong binding",
+        ex: "−8.4 is past the −8.0 target. This is exactly the strong grip you were mutating toward. It is a good sign, not a red flag." }
     ],
-    why: "強 MHC 結合肽代表免疫系統可能攻擊你自己的藥物。其餘兩個結果正是你想要的。"
+    why: "A strong MHC binder means the immune system may attack your own medicine. The other two results are exactly what you want."
   }
 ];
 
@@ -2768,14 +2768,14 @@ Steps[13] = (() => {
         correct++;
       } else {
         b.classList.add("meh");
-        wrap.querySelector(".fb").innerHTML = `<div class="say warn"><span class="ic">?</span><span>不對。請思考哪些選項能保護人類和環境——安全主任會簽署哪個答案？</span></div>`;
+        wrap.querySelector(".fb").innerHTML = `<div class="say warn"><span class="ic">?</span><span>Not quite. The other options protect people and the environment. Think about which answer a safety officer would sign off on.</span></div>`;
       }
       if (correct === QUIZ.length) finish();
     });
   }
   function finish() {
-    say("#quizSay", "good", "三題全對。你的設計和文書工作都已準備就緒。");
-    note("濕實驗室毒性測試確認了模擬無法確認的事");
+    say("#quizSay", "good", "All three correct. Your design and your paperwork are both ready.");
+    note("A wet-lab toxicity test confirms what simulations can't");
     badge("BSL-1"); badge("CCK-8");
     Steps[14].fill();
     complete(13);
@@ -2828,10 +2828,10 @@ Steps[15] = (() => {
   const DEF = { plddt: 70, iptm: 80, mhc1: 0, mhc2: 0 };
   const P = { ...DEF };
   const SL = [
-    ["plddt", "pLDDT 門檻", 50, 95, 1, v => v],
-    ["iptm", "ipTM 門檻", 30, 95, 1, v => (v / 100).toFixed(2)],
-    ["mhc1", "容許的強 MHC-I 結合肽數目", 0, 3, 1, v => v],
-    ["mhc2", "容許的強 MHC-II 結合肽數目", 0, 3, 1, v => v],
+    ["plddt", "pLDDT cut-off", 50, 95, 1, v => v],
+    ["iptm", "ipTM cut-off", 30, 95, 1, v => (v / 100).toFixed(2)],
+    ["mhc1", "Allowed strong MHC-I binders", 0, 3, 1, v => v],
+    ["mhc2", "Allowed strong MHC-II binders", 0, 3, 1, v => v],
   ];
   const survive = c => c.plddt >= P.plddt && c.iptm >= P.iptm / 100 && c.off === 0 && c.mhc1 <= P.mhc1 && c.mhc2 <= P.mhc2;
   const stageCount = (k) => CANDS.filter(c => {
@@ -2859,8 +2859,8 @@ Steps[15] = (() => {
     });
     new Scene($("#studioCanvas"), (ctx, w, h) => {
       const counts = [10, stageCount(1), stageCount(2), stageCount(3), stageCount(4), stageCount(5)];
-      const labels = ["開始", "摺疊", "抓力", "安全", "MHC-I", "MHC-II"];
-      const a = axes(ctx, w, h, { xMin: -.5, xMax: 5.5, yMax: 10, xTicks: [0, 1, 2, 3, 4, 5], yTicks: [0, 2, 4, 6, 8, 10], yLabel: "存活候選者數目", pad: { b: 34, l: 46 } });
+      const labels = ["start", "fold", "grip", "safety", "MHC-I", "MHC-II"];
+      const a = axes(ctx, w, h, { xMin: -.5, xMax: 5.5, yMax: 10, xTicks: [0, 1, 2, 3, 4, 5], yTicks: [0, 2, 4, 6, 8, 10], yLabel: "candidates surviving", pad: { b: 34, l: 46 } });
       const bw = (a.X(1) - a.X(0)) * .58;
       counts.forEach((c, i) => {
         ctx.fillStyle = i === 5 ? (c > 0 ? C.ok : C.hot) : C.acc;
@@ -2880,8 +2880,8 @@ Steps[15] = (() => {
     const kind = left.length === 0 ? "warn" : left.length <= 2 ? "good" : "info";
     say("#studioSay", kind,
       left.length === 0
-        ? `沒有候選者能在這些設定下存活。漏斗太嚴格——把一切都淘汰的篩選器不是安全的篩選器，而是無用的篩選器。`
-        : `<b>${left.length}</b> 個候選者存活：${left.map(c => `<span class="num">${c.id}</span>`).join("、")}。在工作坊設定下恰好有 <b>2</b> 個存活。`);
+        ? `No candidate survives these settings. The funnel is too strict — a filter that removes everything is not a safe filter, it's a useless one.`
+        : `<b>${left.length}</b> candidate${left.length === 1 ? "" : "s"} survive: ${left.map(c => `<span class="num">${c.id}</span>`).join(", ")}. At the workshop settings exactly <b>2</b> survive.`);
   }
   return { init, restore() { } };
 })();
@@ -2893,54 +2893,54 @@ const FR = (a, b) => `<span class="fr"><span>${a}</span><span>${b}</span></span>
 const OP = o => `<span class="op">${o}</span>`;
 const MATHS = {
   1: {
-    bridge: "結合表面是一個幾何問題。MD2 上每個殘基在 3D 空間都有一個位置；設計的殘基能否觸及它，就是一個距離計算。當我們說「A82 和 A85 是熱點」，意思是：任何覆蓋這一對殘基的結合肽，都能擋住結合口袋。",
+    bridge: "A binding surface is a question about geometry. Every residue on MD2 has a position in 3D space; whether a designed residue can reach it is a distance calculation. When we say 'A82 and A85 are the hotspot', we mean: any binder that covers this pair will block the pocket.",
     eq: `<span class="st">contact(i, j)</span> ${OP("⟺")} <span class="st">‖ x<sub>i</sub> ${OP("−")} y<sub>j</sub> ‖ &lt; r<sub>c</sub></span>`,
-    key: [["x<sub>i</sub>, y<sub>j</sub>", "目標與結合肽的原子位置"], ["r<sub>c</sub>", "接觸距離，約 5 Å"], ["實際上", "整個兩兩距離矩陣決定了接觸介面"]]
+    key: [["x<sub>i</sub>, y<sub>j</sub>", "atom positions of target and binder"], ["r<sub>c</sub>", "contact distance, about 5 Å"], ["in practice", "a whole matrix of pairwise distances decides the interface"]]
   },
   2: {
-    bridge: "RFdiffusion 的訓練目標是把加噪過程反轉過來。如果分多步把雜訊加入真實蛋白質結構，你只會得到純粹的雪花雜訊；模型學會了倒行這個過程。生成從雪花開始，最終成為蛋白質。",
+    bridge: "RFdiffusion is trained to reverse a noising process. If you add noise to a real protein structure over many steps, you get pure static; the model learns to run that backwards. Generation starts from static and ends at a protein.",
     eq: `<span class="st">x<sub>t−1</sub> ${OP("=")} ${FR("1", "√α<sub>t</sub>")} ( x<sub>t</sub> ${OP("−")} ${FR("1 − α<sub>t</sub>", "√(1 − ᾱ<sub>t</sub>)")} ε<sub>θ</sub>(x<sub>t</sub>, t) )</span>`,
-    key: [["ε<sub>θ</sub>", "網絡對雜訊的估計"], ["t", "當前存在多少雜訊"], ["模體（motif）", "A82 / A85 的位置在每一步都保持固定"]]
+    key: [["ε<sub>θ</sub>", "the network's guess at the noise"], ["t", "how much noise is currently present"], ["the motif", "positions A82 / A85 are held fixed at every step"]]
   },
   4: {
-    bridge: "pLDDT 是逐殘基的信心分數。AlphaFold 訓練時要預測自己的預測有多準確，所以這個數字不是對蛋白質的猜測——而是對模型本身的校準陳述。",
+    bridge: "pLDDT is a per-residue confidence. AlphaFold was trained to predict how close its own prediction would land, so the number is not a guess about the protein — it is a calibrated statement about the model.",
     eq: `<span class="st">pLDDT<sub>i</sub> ${OP("≈")} 100 × P( error<sub>i</sub> &lt; 2 Å )</span>`,
-    key: [["i", "一個殘基"], ["> 90", "對大部分工作而言已夠有信心"], ["< 70", "主鏈很可能不是真實的"]]
+    key: [["i", "one residue"], ["> 90", "confident enough for most work"], ["< 70", "the backbone is probably not real"]]
   },
   5: {
-    bridge: "ipTM 量度的是模型對兩條鏈之間介面的信心，獨立於每條鏈是否正確摺疊。它是正規化分數，因此可以在不同複合物之間比較。",
+    bridge: "ipTM measures whether the model is confident about the interface between two chains, separately from whether each chain folds correctly. It is a normalised score, so it can be compared across different complexes.",
     eq: `<span class="st">ipTM ${OP("=")} ${FR("1", "1 + d̄<sub>interface</sub> / d<sub>0</sub>")}</span>`,
-    key: [["d̄", "介面上的平均距離誤差"], ["d<sub>0</sub>", "隨複合物大小而增長的正規化長度"], ["0.80", "一般視為「值得在實驗室測試」的門檻"]]
+    key: [["d̄", "average distance error at the interface"], ["d<sub>0</sub>", "a normalising length that grows with complex size"], ["0.80", "the usual bar for 'worth testing in the lab'"]]
   },
   6: {
-    bridge: "MMseqs2 會在你的肽與每個人類蛋白質之間尋找局部比對，然後報告每個匹配有多出人意料。E 值就是：在這樣大小的數據庫中，單靠偶然你會預期找到多少個這麼好的匹配。",
+    bridge: "MMseqs2 looks for local alignments between your peptide and every human protein, then reports how surprising each match is. The E-value is the number of matches this good you would expect to find by chance in a database this size.",
     eq: `<span class="st">E ${OP("=")} K · m · n · e<sup>−λS</sup></span>`,
-    key: [["S", "比對分數"], ["K, λ", "配合評分矩陣擬合的常數"], ["m, n", "被比較的兩條序列的長度"]]
+    key: [["S", "the alignment score"], ["K, λ", "constants fitted to the scoring matrix"], ["m, n", "lengths of the two sequences being compared"]]
   },
   7: {
-    bridge: "MHCflurry 不會輸出是／否的答案。它輸出的是百分位排名：這條肽在數百萬條隨機肽中排在哪裡？排名低於 0.5%，代表它位於結合肽的前半個百分位——是強烈的警號。",
+    bridge: "MHCflurry does not output a yes/no answer. It outputs a percentile rank: where does this peptide sit among millions of random peptides? A rank below 0.5% means it is in the top half-percent of binders — a strong flag.",
     eq: `<span class="st">rank<sub>i</sub> ${OP("=")} ${FR("#{ j : score<sub>j</sub> ≥ score<sub>i</sub> }", "N")} × 100%</span>`,
-    key: [["score", "預測的呈遞強度"], ["rank < 0.5%", "強結合肽——淘汰"], ["為何用排名", "原始分數在不同等位基因之間不能比較"]]
+    key: [["score", "predicted presentation strength"], ["rank < 0.5%", "strong binder — discard"], ["why rank", "raw scores are not comparable across alleles"]]
   },
   9: {
-    bridge: "分子動力學為每個原子積分牛頓運動方程式。RMSD 就是結構最優擬合回原位後，每個原子相對起始位置的平均移動距離。",
+    bridge: "Molecular dynamics integrates Newton's equations for every atom. RMSD is simply the average distance each atom has moved from its starting position after the structure is best-fitted back onto the original.",
     eq: `<span class="st">RMSD(t) ${OP("=")} √<span class="rad">${FR("1", "N")} <span>Σ</span><sub>i=1</sub><sup>N</sup> ‖ r<sub>i</sub>(t) ${OP("−")} r<sub>i</sub>(0) ‖²</span></span>`,
-    key: [["N", "被比較的原子數目"], ["2 Å 以下平穩", "摺疊保持穩定"], ["攀升超過 2 Å", "結構正在解摺疊"]]
+    key: [["N", "number of atoms compared"], ["flat under 2 Å", "the fold is holding"], ["climbing past 2 Å", "the structure is unfolding"]]
   },
   10: {
-    bridge: "每個突變都是一場賭博：可能改善結合，也可能不會。上置信界就是經典的聰明下注法——嘗試看起來好的選項，但也要嘗試你最不熟悉的，因為你對它們的估計並不確定。",
+    bridge: "Every mutation is a gamble: it might improve binding, or it might not. Upper Confidence Bound is the classic way to gamble well — try the options that look good, but also try the ones you know least about, because your estimate of them is uncertain.",
     eq: `<span class="st">a<sub>i</sub> ${OP("=")} μ<sub>i</sub> ${OP("−")} c √<span class="rad">${FR("ln N", "n<sub>i</sub>")}</span></span>`,
-    key: [["μ<sub>i</sub>", "位置 i 迄今的最佳結果"], ["n<sub>i</sub>", "位置 i 已嘗試的次數"], ["N", "所有位置的總嘗試次數"], ["c", "探索權重——c 越大代表越好奇"]]
+    key: [["μ<sub>i</sub>", "best result seen at position i so far"], ["n<sub>i</sub>", "how many times i has been tried"], ["N", "total tries across all positions"], ["c", "exploration weight — bigger c means more curiosity"]]
   },
   12: {
-    bridge: "共有 4³ = 64 個密碼子，卻只有 20 種氨基酸，所以密碼是冗餘的。不同生物對同一氨基酸偏好的密碼子不同——配合宿主的偏好，就是免費的效率。",
-    eq: `<span class="st">codon usage bias: ${FR("count(codon)", "count(同義家族)")}</span>`,
-    key: [["同義（synonymous）", "密碼子不同，氨基酸相同"], ["高表達基因", "幾乎只使用偏好密碼子"], ["為何重要", "罕見密碼子會令核糖體停頓，降低產量"]]
+    bridge: "There are 4³ = 64 codons and only 20 amino acids, so the code is redundant. Different organisms prefer different codons for the same amino acid — matching the host's preference is free efficiency.",
+    eq: `<span class="st">codon usage bias: ${FR("count(codon)", "count(synonymous family)")}</span>`,
+    key: [["synonymous", "different codons, same amino acid"], ["highly expressed genes", "use the preferred codons almost exclusively"], ["why it matters", "a rare codon can stall the ribosome and cut yield"]]
   },
   13: {
-    bridge: "風險不是一個是／否的屬性。每項檢查回答不同的問題——它會摺疊嗎、會結合嗎、像不像危險的東西、身體會攻擊它嗎——只有五個答案都合格，設計才能推進。",
+    bridge: "Risk is not a yes/no property. Each check answers a different question — does it fold, does it bind, does it resemble something dangerous, will the body attack it — and the design only moves forward when all five answers are acceptable.",
     eq: `<span class="st">accept ${OP("⟺")} pLDDT ≥ 70 ${OP("∧")} ipTM ≥ 0.80 ${OP("∧")} hits = 0 ${OP("∧")} MHC-I = 0 ${OP("∧")} MHC-II = 0</span>`,
-    key: [["∧", "以上全部必須成立"], ["為何不取平均", "一個設計只要有任何一項檢查不合格就不能用，無論其他方面有多好"]]
+    key: [["∧", "all of these must hold"], ["why not average them", "a design that fails one check is unusable, however good the others are"]]
   }
 };
 function buildMaths() {
@@ -2952,12 +2952,12 @@ function buildMaths() {
     const btn = document.createElement("button");
     btn.className = "ghost maths-btn"; btn.type = "button";
     btn.setAttribute("aria-expanded", "false"); btn.setAttribute("aria-controls", id);
-    btn.innerHTML = `<span class="mi" aria-hidden="true">ƒ</span>背後的數學`;
+    btn.innerHTML = `<span class="mi" aria-hidden="true">ƒ</span>The maths behind this`;
     const panel = document.createElement("div");
     panel.className = "maths-panel"; panel.id = id; panel.hidden = true;
     panel.innerHTML =
       `<p>${m.bridge}</p>` +
-      `<button class="ghost maths-more" type="button" aria-expanded="false">顯示方程式</button>` +
+      `<button class="ghost maths-more" type="button" aria-expanded="false">Show the equation</button>` +
       `<div class="maths-eq" hidden><div class="eq">${m.eq}</div>` +
       `<div class="eq-key">${m.key.map(([a, b]) => `<div><b>${a}</b> &nbsp;${b}</div>`).join("")}</div></div>`;
     const next = $(":scope > .next-btn", foot);
@@ -2966,13 +2966,13 @@ function buildMaths() {
     btn.addEventListener("click", () => {
       const open = panel.hidden;
       panel.hidden = !open; btn.setAttribute("aria-expanded", open);
-      if (open) badge("好奇");
+      if (open) badge("Curious");
     });
     const more = $(".maths-more", panel), eq = $(".maths-eq", panel);
     more.addEventListener("click", () => {
       const open = eq.hidden;
       eq.hidden = !open; more.setAttribute("aria-expanded", open);
-      more.textContent = open ? "隱藏方程式" : "顯示方程式";
+      more.textContent = open ? "Hide the equation" : "Show the equation";
     });
   });
 }
@@ -3065,7 +3065,7 @@ function initScrollFx() {
   lastT = performance.now(); rafId = requestAnimationFrame(loop);
 
   const next = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].find(n => S.done[0] && !S.done[n]);
-  if (next) { toast(`歡迎回來。繼續進行：${NAMES[next]}。`); setTimeout(() => goTo(next), 500); }
+  if (next) { toast(`Welcome back. Continuing at ${NAMES[next]}.`); setTimeout(() => goTo(next), 500); }
 })();
 </script>
 </body>

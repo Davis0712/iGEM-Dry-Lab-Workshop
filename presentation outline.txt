@@ -1,0 +1,23 @@
+A chronic wound keeps triggering an immune alarm. The alarm travels through a receptor called MD2.
+
+A peptide called TAP2 already blocks MD2 and helps wounds heal — but it is short-lived, moderately strong, and can provoke an immune response. Our job is not to invent from nothing: it is to design a better TAP2 using generative AI, then run it through the same filters a real drug candidate faces.
+
+Stage 1.1 Find the spot on MD2 worth covering
+
+Stage 1.2 Let the generative AI propose 10 candidates
+
+Stage 2.1 Throw away anything that won't fold
+
+Stage 2.2 Does it actually grip MD2?
+
+Stage 2.3 Does it resemble a human sequence?
+
+Stage 2.4 Could the immune system recognise your medicine?
+
+Stage 3.1 Does it remain stable under body-like conditions?
+
+Stage 3.2 Make the grip stronger
+
+Stage 4.1 Write the gene
+
+Stage 4.2 Clear the safety check
